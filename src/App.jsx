@@ -7,8 +7,10 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import Windows from "./assets/windows_logo.ico";
 import Dark_Agent from "./assets/Dark_Agent.ico";
 import Book from "./assets/Book.ico";
-import Users from "./assets/Users.ico";
+import About from "./assets/About.ico";
 import Off from "./assets/Off.ico";
+import Projects from "./assets/Projects.ico";
+import Contact from "./assets/Contact.ico";
 
 /*Pegando o tema original do React 95*/
 import original from "react95/dist/themes/original";
@@ -85,14 +87,14 @@ export default function App() {
           <div className="apps-container">
             <AppIcon
               label={"About Me"}
-              img={Users}
+              img={About}
               logic={() => {
                 handleIconClick("about");
               }}
             />
             {about && <>adssad</>}
-            <AppIcon label={"Generation 2"} img={Windows} />
-            <AppIcon label={"Generation 3"} img={Dark_Agent} />
+            <AppIcon label={"My Projects"} img={Projects} />
+            <AppIcon label={"Contact"} img={Contact} />
           </div>
           <div className="toolbar-container">
             <R.AppBar position="relative">
