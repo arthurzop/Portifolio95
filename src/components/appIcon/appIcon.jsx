@@ -6,7 +6,7 @@ import './appIcon.css'
 export default function AppIcon({img, label, logic}) {
   return (
     <>
-      <div className="app" onClick={logic}>
+      <div className="app" onDoubleClick={logic}>
         <img src={img} alt=" " className="app-icon" />
         <R.Anchor>{label}</R.Anchor>
       </div>

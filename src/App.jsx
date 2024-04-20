@@ -8,6 +8,7 @@ import Windows from "./assets/windows_logo.ico";
 import Dark_Agent from "./assets/Dark_Agent.ico";
 import Book from "./assets/Book.ico";
 import Users from "./assets/Users.ico";
+import Off from "./assets/Off.ico";
 
 /*Pegando o tema original do React 95*/
 import original from "react95/dist/themes/original";
@@ -16,6 +17,7 @@ import original from "react95/dist/themes/original";
 import ms_sans_serif from "react95/dist/fonts/ms_sans_serif.woff2";
 import ms_sans_serif_bold from "react95/dist/fonts/ms_sans_serif_bold.woff2";
 import AppIcon from "./components/appIcon/appIcon";
+import OffScreen from "./components/offScreen/offScreen";
 
 // resetando os estilos globais e  adicionando a fonte personalizada
 const GlobalStyles = createGlobalStyle`
@@ -40,53 +42,61 @@ const GlobalStyles = createGlobalStyle`
 export default function App() {
   let [open, setOpen] = useState(false);
   let [time, setTime] = useState(new Date());
-  let [gen1, setGen1] = useState(false)
+  let [about, setAbout] = useState(false);
+  let [off, setOff] = useState(false);
 
   useEffect(() => {
     setInterval(() => setTime(new Date()), 1000);
   });
 
   const handleClick = (item) => {
-    //item = setado no onclick
-    if (item == "github") {
-      //pega o nome pelo onClick e compara
-      const win = window.open("https://github.com/arthurzop", "_blank"); // seta uma varivel (link)
-      win.focus(); //redireciona pro link da variavel
-    } else if (item == "notion") {
-      const win = window.open(
-        "https://trusted-surfboard-d28.notion.site/Documenta-o-PokeApi-React95-ec201bb47a4e4df5aa5c4280e24ae84e?pvs=4",
-        "_blank"
-      );
-      win.focus();
+    switch (item) {
+      case "github":
+        let win = window.open("https://github.com/arthurzop", "_blank");
+        win.focus();
+
+      case "notion":
+        win = window.open(
+          "https://trusted-surfboard-d28.notion.site/Documenta-o-PokeApi-React95-ec201bb47a4e4df5aa5c4280e24ae84e?pvs=4",
+          "_blank"
+        );
+        win.focus();
+
+      case "exit":
+        setOff(true);
+        setTimeout(() => {
+          window.close();
+        }, 3000);
     }
   };
 
   const handleIconClick = (icon) => {
-    if (icon == 'gen1'){
-      setGen1(!gen1)
+    if (icon == "about") {
+      setAbout(!about);
     }
-  } 
+  };
 
   return (
+    <>
+      {off && <OffScreen />}
       <body>
         <GlobalStyles />
         <ThemeProvider theme={original}>
           <div className="apps-container">
-            <AppIcon label={'Generation 1'} img={Users} logic={() => {handleIconClick('gen1')}}/>
-            {gen1 && (
-              <>
-                adssad
-              </>
-            )}
-            <AppIcon label={'Generation 2'} img={Windows}/>
-            <AppIcon label={'Generation 3'} img={Dark_Agent}/>
-           
-            
+            <AppIcon
+              label={"About Me"}
+              img={Users}
+              logic={() => {
+                handleIconClick("about");
+              }}
+            />
+            {about && <>adssad</>}
+            <AppIcon label={"Generation 2"} img={Windows} />
+            <AppIcon label={"Generation 3"} img={Dark_Agent} />
           </div>
           <div className="toolbar-container">
-          <R.AppBar position="relative">
+            <R.AppBar position="relative">
               <R.Toolbar
-              
                 style={{
                   justifyContent: "space-between",
                   alignItems: "center",
@@ -110,7 +120,6 @@ export default function App() {
                 </R.Button>
                 {open && (
                   <R.MenuList
-                    
                     style={{
                       position: "absolute",
                       left: 0,
@@ -144,6 +153,20 @@ export default function App() {
                       <img className="icon" src={Book} alt="" />
                       <R.Anchor>Documentation</R.Anchor>
                     </R.MenuListItem>
+                    <R.Divider />
+                    <R.MenuListItem
+                      style={{
+                        gap: 10,
+                        alignItems: "center",
+                        cursor: "pointer",
+                      }}
+                      onClick={() => {
+                        handleClick("exit");
+                      }}
+                    >
+                      <img src={Off} alt="" />
+                      <R.Anchor>Exit</R.Anchor>
+                    </R.MenuListItem>
                   </R.MenuList>
                 )}
                 <R.Avatar
@@ -165,5 +188,6 @@ export default function App() {
           </div>
         </ThemeProvider>
       </body>
+    </>
   );
 }
