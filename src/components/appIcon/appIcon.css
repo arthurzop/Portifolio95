@@ -1,7 +1,6 @@
 .app{
     display: flex;
     flex-wrap: nowrap;
-    text-wrap: nowrap;
     flex-direction: column;
     align-items: center;
     gap: 1vh;

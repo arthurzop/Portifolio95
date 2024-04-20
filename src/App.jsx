@@ -93,7 +93,7 @@ export default function App() {
               }}
             />
             {about && <>adssad</>}
-            <AppIcon label={"My Projects"} img={Projects} />
+            <AppIcon label={"Projects"} img={Projects} />
             <AppIcon label={"Contact"} img={Contact} />
           </div>
           <div className="toolbar-container">
