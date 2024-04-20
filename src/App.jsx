@@ -7,7 +7,7 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import Windows from "./assets/windows_logo.ico";
 import Dark_Agent from "./assets/Dark_Agent.ico";
 import Book from "./assets/Book.ico";
-import Clock from "./assets/Clock.ico";
+import Users from "./assets/Users.ico";
 
 /*Pegando o tema original do React 95*/
 import original from "react95/dist/themes/original";
@@ -15,6 +15,7 @@ import original from "react95/dist/themes/original";
 // Importando as fontes do React 95
 import ms_sans_serif from "react95/dist/fonts/ms_sans_serif.woff2";
 import ms_sans_serif_bold from "react95/dist/fonts/ms_sans_serif_bold.woff2";
+import AppIcon from "./components/appIcon/appIcon";
 
 // resetando os estilos globais e  adicionando a fonte personalizada
 const GlobalStyles = createGlobalStyle`
@@ -60,13 +61,18 @@ export default function App() {
   };
 
   return (
-    <>
       <body>
         <GlobalStyles />
         <ThemeProvider theme={original}>
-          <main>
-          <a href="" >sadfdsafas</a>
-            <R.AppBar  position="absolute" style={{ bottom: 0, top: "93.5%" }}>
+          <div className="apps-container">
+            <AppIcon label={'Generation 1'} img={Users}/>
+            <AppIcon label={'Generation 2'} img={Windows}/>
+            <AppIcon label={'Generation 3'} img={Dark_Agent}/>
+           
+            
+          </div>
+          <div className="toolbar-container">
+          <R.AppBar position="relative">
               <R.Toolbar
               
                 style={{
@@ -144,9 +150,8 @@ export default function App() {
                 </R.Avatar>
               </R.Toolbar>
             </R.AppBar>
-          </main>
+          </div>
         </ThemeProvider>
       </body>
-    </>
   );
 }
