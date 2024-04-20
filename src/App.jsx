@@ -40,6 +40,7 @@ const GlobalStyles = createGlobalStyle`
 export default function App() {
   let [open, setOpen] = useState(false);
   let [time, setTime] = useState(new Date());
+  let [gen1, setGen1] = useState(false)
 
   useEffect(() => {
     setInterval(() => setTime(new Date()), 1000);
@@ -60,12 +61,23 @@ export default function App() {
     }
   };
 
+  const handleIconClick = (icon) => {
+    if (icon == 'gen1'){
+      setGen1(!gen1)
+    }
+  } 
+
   return (
       <body>
         <GlobalStyles />
         <ThemeProvider theme={original}>
           <div className="apps-container">
-            <AppIcon label={'Generation 1'} img={Users}/>
+            <AppIcon label={'Generation 1'} img={Users} logic={() => {handleIconClick('gen1')}}/>
+            {gen1 && (
+              <>
+                adssad
+              </>
+            )}
             <AppIcon label={'Generation 2'} img={Windows}/>
             <AppIcon label={'Generation 3'} img={Dark_Agent}/>
            
