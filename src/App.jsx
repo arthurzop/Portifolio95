@@ -11,7 +11,6 @@ import About from "./assets/About.ico";
 import Off from "./assets/Off.ico";
 import Projects from "./assets/Projects.ico";
 import Contact from "./assets/Contact.ico";
-import Eu from "./assets/Eu.png";
 
 /*Pegando o tema original do React 95*/
 import original from "react95/dist/themes/original";
@@ -46,7 +45,7 @@ const GlobalStyles = createGlobalStyle`
 export default function App() {
   let [open, setOpen] = useState(false);
   let [time, setTime] = useState(new Date());
-  let [about, setAbout] = useState(true);
+  let [about, setAbout] = useState(false);
   let [off, setOff] = useState(false);
 
   useEffect(() => {
