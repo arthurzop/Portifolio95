@@ -1,20 +1,41 @@
-.about-image{
-    width: 250px;
-    border: double 3px;
-  }
-  
-  .about-text{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .about-text h1{
-    font-size: 1.8em;
-  }
-  
-  .about-text h2{
-    font-size: 1.4em;
-  }
+.about-image {
+  width: 300px;
+  max-height: 300px;
+  border: double 3px;
+}
+
+.about-text {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2vh 0;
+  gap: 10px;
+}
+
+.about-text h1 {
+  font-size: 1.8em;
+}
+
+.about-text h2 {
+  max-width: 220px;
+  align-self: center;
+  text-align: justify;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.about-text h3 {
+  font-size: 1.2em;
+  align-self: center;
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+.jim {
+  width: 50px;
+  resize: both;
+}
