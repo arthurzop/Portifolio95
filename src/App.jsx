@@ -11,6 +11,7 @@ import About from "./assets/About.ico";
 import Off from "./assets/Off.ico";
 import Projects from "./assets/Projects.ico";
 import Contact from "./assets/Contact.ico";
+import Eu from "./assets/Eu.png";
 
 /*Pegando o tema original do React 95*/
 import original from "react95/dist/themes/original";
@@ -20,6 +21,7 @@ import ms_sans_serif from "react95/dist/fonts/ms_sans_serif.woff2";
 import ms_sans_serif_bold from "react95/dist/fonts/ms_sans_serif_bold.woff2";
 import AppIcon from "./components/appIcon/appIcon";
 import OffScreen from "./components/offScreen/offScreen";
+import AboutMe from "./components/aboutMe/aboutMe";
 
 // resetando os estilos globais e  adicionando a fonte personalizada
 const GlobalStyles = createGlobalStyle`
@@ -44,7 +46,7 @@ const GlobalStyles = createGlobalStyle`
 export default function App() {
   let [open, setOpen] = useState(false);
   let [time, setTime] = useState(new Date());
-  let [about, setAbout] = useState(false);
+  let [about, setAbout] = useState(true);
   let [off, setOff] = useState(false);
 
   useEffect(() => {
@@ -92,7 +94,13 @@ export default function App() {
                 handleIconClick("about");
               }}
             />
-            {about && <>adssad</>}
+            {about && (
+              <AboutMe
+                logic={() => {
+                  setAbout(!about);
+                }}
+              />
+            )}
             <AppIcon label={"Projects"} img={Projects} />
             <AppIcon label={"Contact"} img={Contact} />
           </div>
