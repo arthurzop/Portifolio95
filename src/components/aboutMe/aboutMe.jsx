@@ -22,7 +22,7 @@ export default function AboutMe({ logic }) {
       <R.Window
         style={{
           position: "absolute",
-          top: "10%",
+          top: "20%",
           left: "30%",
           width: 650,
           height: "fit-content",

@@ -12,8 +12,13 @@ input {
   font-weight: bold;
 }
 
+label{
+ margin-inline-start: 2vw;
+}
+
 form h1{
     font-weight: bold;
     text-align: center;
     margin-top: 1vh;
+    font-size: 2em;
 }
