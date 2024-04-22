@@ -47,8 +47,8 @@ const GlobalStyles = createGlobalStyle`
 export default function App() {
   let [open, setOpen] = useState(false); //abrir menu
   let [time, setTime] = useState(new Date()); //pegar hora
-  let [about, setAbout] = useState(false); //abrir/fechar about me
-  let [project, setProject] = useState(false); //abrir/fechar app project
+  let [about, setAbout] = useState(true); //abrir/fechar about me
+  let [project, setProject] = useState(true); //abrir/fechar app project
   let [contact, setContact] = useState(true); //abrir/fechar app contact
   let [off, setOff] = useState(false); //abrir pagina de saida
 
