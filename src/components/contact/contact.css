@@ -19,6 +19,26 @@ label{
 form h1{
     font-weight: bold;
     text-align: center;
-    margin-top: 1vh;
-    font-size: 2em;
+    margin-top: 2vh;
+    font-size: 1.6em;
+}
+
+.social-container{
+  display: flex;
+  flex-direction: column;
+  gap: 4vh;
+  width: 100%;
+}
+
+.row-container{
+  display: flex;
+  gap: 3vw;
+  padding-inline-start: 5vw;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.8em;
+}
+
+.social-image{
+  width: 50px;
 }
