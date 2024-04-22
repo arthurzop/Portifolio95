@@ -10,7 +10,7 @@ import Book from "./assets/Book.ico";
 import About from "./assets/About.ico";
 import Off from "./assets/Off.ico";
 import Folder from "./assets/Projects.ico";
-import Contact from "./assets/Contact.ico";
+import Telephone from "./assets/Contact.ico";
 
 /*Pegando o tema original do React 95*/
 import original from "react95/dist/themes/original";
@@ -22,6 +22,7 @@ import AppIcon from "./components/appIcon/appIcon";
 import OffScreen from "./components/offScreen/offScreen";
 import AboutMe from "./components/aboutMe/aboutMe";
 import Projects from "./components/projects/projects";
+import Contact from "./components/contact/contact";
 
 // resetando os estilos globais e  adicionando a fonte personalizada
 const GlobalStyles = createGlobalStyle`
@@ -44,11 +45,12 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 export default function App() {
-  let [open, setOpen] = useState(false);
-  let [time, setTime] = useState(new Date());
-  let [about, setAbout] = useState(false);
-  let [project, setProject] = useState(false);
-  let [off, setOff] = useState(false);
+  let [open, setOpen] = useState(false); //abrir menu
+  let [time, setTime] = useState(new Date()); //pegar hora
+  let [about, setAbout] = useState(false); //abrir/fechar about me
+  let [project, setProject] = useState(false); //abrir/fechar app project
+  let [contact, setContact] = useState(true); //abrir/fechar app contact
+  let [off, setOff] = useState(false); //abrir pagina de saida
 
   useEffect(() => {
     setInterval(() => setTime(new Date()), 1000);
@@ -70,7 +72,6 @@ export default function App() {
       case "exit":
         setOff(true);
         setTimeout(() => {
-          window.open("", "_self", "");
           window.close();
         }, 100);
     }
@@ -81,6 +82,8 @@ export default function App() {
       setAbout(!about);
     } else if (icon == "project") {
       setProject(!project);
+    } else if (icon == "contact") {
+      setContact(!contact);
     }
   };
 
@@ -119,7 +122,20 @@ export default function App() {
                 }}
               />
             )}
-            <AppIcon label={"Contact"} img={Contact} />
+            <AppIcon
+              label={"Contact"}
+              img={Telephone}
+              logic={() => {
+                handleIconClick("contact");
+              }}
+            />
+            {contact && (
+              <Contact
+                logic={() => {
+                  setContact(!contact);
+                }}
+              />
+            )}
           </div>
           <div className="toolbar-container">
             <R.AppBar position="relative">

@@ -4,7 +4,6 @@ import * as R from "react95";
 
 //images
 import Eu from "../../assets/Eu.png";
-import People from "../../assets/People.ico";
 
 export default function AboutMe({ logic }) {
   const [state, setState] = useState({
@@ -28,6 +27,7 @@ export default function AboutMe({ logic }) {
           width: 650,
           height: "fit-content",
           userSelect: "text",
+          zIndex: 3,
         }}
       >
         <R.WindowHeader
@@ -101,6 +101,7 @@ export default function AboutMe({ logic }) {
             )}
             {activeTab === 1 && (
               <R.GroupBox label="Working On">
+                <R.ScrollView>
                 <div className="currently-text">
                   <h2>Studying:</h2>
                   <ul>
@@ -137,34 +138,37 @@ export default function AboutMe({ logic }) {
                     </li>
                   </ul>
                 </div>
+                </R.ScrollView>
               </R.GroupBox>
             )}
             {activeTab === 2 && (
               <R.GroupBox label="Skills">
-                <div className="currently-text">
-                  <h2>Languages & Frameworks:</h2>
-                  <ul>
-                    <li>JavaScript</li>
-                    <li>ReactJS</li>
-                    <li>React Native</li>
-                    <li>Styled Components</li>
-                    <li>HTML / CSS</li>
-                    <li>BootStrap</li>
-                  </ul>
-                  <R.Divider />
-                  <h2>Tech:</h2>
-                  <ul>
-                    <li>Git</li>
-                    <li>Figma</li>
-                    <li>Notion</li>
-                  </ul>
-                  <R.Divider />
-                  <h2>Agile Methodology:</h2>
-                  <ul>
-                    <li>Scrum</li>
-                    <li>Kanbam</li>
-                  </ul>
-                </div>
+                <R.ScrollView style={{ height: 400 }}>
+                  <div className="currently-text">
+                    <h2>Languages & Frameworks:</h2>
+                    <ul>
+                      <li>JavaScript</li>
+                      <li>ReactJS</li>
+                      <li>React Native</li>
+                      <li>Styled Components</li>
+                      <li>HTML / CSS</li>
+                      <li>BootStrap</li>
+                    </ul>
+                    <R.Divider />
+                    <h2>Tech:</h2>
+                    <ul>
+                      <li>Git</li>
+                      <li>Figma</li>
+                      <li>Notion</li>
+                    </ul>
+                    <R.Divider />
+                    <h2>Agile Methodology:</h2>
+                    <ul>
+                      <li>Scrum</li>
+                      <li>Kanbam</li>
+                    </ul>
+                  </div>
+                </R.ScrollView>
               </R.GroupBox>
             )}
           </R.TabBody>

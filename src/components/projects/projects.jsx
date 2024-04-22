@@ -25,11 +25,13 @@ export default function Projects({ logic }) {
       <R.Window
         style={{
           position: "absolute",
-          top: "10%",
-          left: "30%",
+          top:  "20%",
+          left: "55%",
           width: 650,
           height: "fit-content",
           userSelect: "text",
+          zIndex: 2
+
         }}
       >
         <R.WindowHeader
@@ -92,7 +94,7 @@ export default function Projects({ logic }) {
           <R.TabBody>
             {activeTab === 0 && (
               <R.GroupBox
-                label=""
+                label="Overview"
                 style={{
                   display: "flex",
                   gap: 20,

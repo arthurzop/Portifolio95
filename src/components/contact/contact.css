@@ -1,0 +1,19 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+form h1{
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1vh;
+}
