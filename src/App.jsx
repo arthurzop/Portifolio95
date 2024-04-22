@@ -9,7 +9,7 @@ import Dark_Agent from "./assets/Dark_Agent.ico";
 import Book from "./assets/Book.ico";
 import About from "./assets/About.ico";
 import Off from "./assets/Off.ico";
-import Projects from "./assets/Projects.ico";
+import Folder from "./assets/Projects.ico";
 import Contact from "./assets/Contact.ico";
 
 /*Pegando o tema original do React 95*/
@@ -21,6 +21,7 @@ import ms_sans_serif_bold from "react95/dist/fonts/ms_sans_serif_bold.woff2";
 import AppIcon from "./components/appIcon/appIcon";
 import OffScreen from "./components/offScreen/offScreen";
 import AboutMe from "./components/aboutMe/aboutMe";
+import Projects from "./components/projects/projects";
 
 // resetando os estilos globais e  adicionando a fonte personalizada
 const GlobalStyles = createGlobalStyle`
@@ -46,6 +47,7 @@ export default function App() {
   let [open, setOpen] = useState(false);
   let [time, setTime] = useState(new Date());
   let [about, setAbout] = useState(false);
+  let [project, setProject] = useState(false);
   let [off, setOff] = useState(false);
 
   useEffect(() => {
@@ -68,14 +70,17 @@ export default function App() {
       case "exit":
         setOff(true);
         setTimeout(() => {
+          window.open("", "_self", "");
           window.close();
-        }, 3000);
+        }, 100);
     }
   };
 
   const handleIconClick = (icon) => {
     if (icon == "about") {
       setAbout(!about);
+    } else if (icon == "project") {
+      setProject(!project);
     }
   };
 
@@ -100,7 +105,20 @@ export default function App() {
                 }}
               />
             )}
-            <AppIcon label={"Projects"} img={Projects} />
+            <AppIcon
+              label={"Projects"}
+              img={Folder}
+              logic={() => {
+                handleIconClick("project");
+              }}
+            />
+            {project && (
+              <Projects
+                logic={() => {
+                  setProject(!project);
+                }}
+              />
+            )}
             <AppIcon label={"Contact"} img={Contact} />
           </div>
           <div className="toolbar-container">

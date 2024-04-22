@@ -1,0 +1,37 @@
+.project-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+  user-select: none;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  user-select: none;
+}
+
+.text-container h1 {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.text-container h2 {
+  font-size: 1.1em;
+  text-align: center;
+}
+
+.project-image {
+  width: 250px;
+  height: 125px;
+}
+
+.comic {
+  width: 50%;
+  resize: both;
+  align-self: center;
+  margin: 3vh 0;
+  user-select: none;
+}
