@@ -23,7 +23,19 @@ body{
   flex-wrap: wrap;
   width: fit-content;
   max-height: 95vh;
-  gap: 3vh;
+  gap: 1vh;
   padding: 3vh;
 }
 
+.subcontainer{
+  display: flex;
+  align-items: center;
+  gap: .5vw;
+}
+
+.open-apps-container{
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  margin: 10vh;
+}

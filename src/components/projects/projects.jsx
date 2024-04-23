@@ -25,8 +25,6 @@ export default function Projects({ logic }) {
       <R.Window
         style={{
           position: "absolute",
-          top:  "15%",
-          left: "55%",
           width: 650,
           height: "fit-content",
           userSelect: "text",

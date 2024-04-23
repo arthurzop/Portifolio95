@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import * as R from "react95";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
+import Draggable from "react-draggable";
 
 //imagens
 import Windows from "./assets/windows_logo.ico";
@@ -73,7 +74,8 @@ export default function App() {
         setOff(true);
         setTimeout(() => {
           window.close();
-        }, 100);
+          setOff(false);
+        }, 3000);
     }
   };
 
@@ -101,13 +103,6 @@ export default function App() {
                 handleIconClick("about");
               }}
             />
-            {about && (
-              <AboutMe
-                logic={() => {
-                  setAbout(!about);
-                }}
-              />
-            )}
             <AppIcon
               label={"Projects"}
               img={Folder}
@@ -115,13 +110,7 @@ export default function App() {
                 handleIconClick("project");
               }}
             />
-            {project && (
-              <Projects
-                logic={() => {
-                  setProject(!project);
-                }}
-              />
-            )}
+
             <AppIcon
               label={"Contact"}
               img={Telephone}
@@ -129,12 +118,61 @@ export default function App() {
                 handleIconClick("contact");
               }}
             />
+          </div>
+          <div className="open-apps-container">
+            {project && (
+              <Draggable
+                axis="both"
+                handle=".handle"
+                position={null}
+                grid={[1, 1]}
+                scale={1}
+                defaultPosition={{ x: 1000, y: 0 }}
+                allowAnyClick
+              >
+                <div className="handle">
+                  <Projects
+                    logic={() => {
+                      setProject(!project);
+                    }}
+                  />
+                </div>
+              </Draggable>
+            )}
             {contact && (
-              <Contact
-                logic={() => {
-                  setContact(!contact);
-                }}
-              />
+              <Draggable
+                axis="both"
+                handle=".handle"
+                position={null}
+                grid={[1, 1]}
+                scale={1}
+              >
+                <div className="handle">
+                  <Contact
+                    logic={() => {
+                      setContact(!contact);
+                    }}
+                  />
+                </div>
+              </Draggable>
+            )}
+            {about && (
+              <Draggable
+                axis="both"
+                handle=".handle"
+                position={null}
+                grid={[1, 1]}
+                scale={1}
+                defaultPosition={{ x: 450, y: 70 }}
+              >
+                <div className="handle">
+                  <AboutMe
+                    logic={() => {
+                      setAbout(!about);
+                    }}
+                  />
+                </div>
+              </Draggable>
             )}
           </div>
           <div className="toolbar-container">
@@ -145,73 +183,134 @@ export default function App() {
                   alignItems: "center",
                 }}
               >
-                <R.Button
-                  size="lg"
-                  primary
-                  style={{
-                    gap: 10,
-                    alignItems: "center",
-                    justifyContent: "space-around",
-                    fontWeight: "bold",
-                    width: 110,
-                  }}
-                  onClick={() => setOpen(!open)}
-                  active={open} //se tiver true, fica active (afundado)
-                >
-                  <img className="icon" src={Windows} />
-                  Menu
-                </R.Button>
-                {open && (
-                  <R.MenuList
+                <div className="subcontainer">
+                  <R.Button
+                    size="lg"
+                    primary
                     style={{
-                      position: "absolute",
-                      left: 0,
-                      bottom: "100%",
+                      gap: 10,
+                      alignItems: "center",
+                      justifyContent: "space-around",
+                      fontWeight: "bold",
+                      width: 110,
                     }}
+                    onClick={() => setOpen(!open)}
+                    active={open} //se tiver true, fica active (afundado)
                   >
-                    <R.MenuListItem
+                    <img className="icon" src={Windows} />
+                    Menu
+                  </R.Button>
+                  {open && (
+                    <R.MenuList
                       style={{
-                        gap: 10,
-                        alignItems: "center",
-                        cursor: "pointer",
-                      }}
-                      onClick={() => {
-                        handleClick("github");
+                        position: "absolute",
+                        left: 0,
+                        bottom: "100%",
                       }}
                     >
-                      <img className="icon" src={Dark_Agent} alt="" />
-                      <R.Anchor>My Github</R.Anchor>
-                    </R.MenuListItem>
-                    <R.Divider />
-                    <R.MenuListItem
-                      style={{
-                        gap: 10,
-                        alignItems: "center",
-                        cursor: "pointer",
-                      }}
+                      <R.MenuListItem
+                        style={{
+                          gap: 10,
+                          alignItems: "center",
+                          cursor: "pointer",
+                        }}
+                        onClick={() => {
+                          handleClick("github");
+                        }}
+                      >
+                        <img className="icon" src={Dark_Agent} alt="" />
+                        <R.Anchor>My Github</R.Anchor>
+                      </R.MenuListItem>
+                      <R.Divider />
+                      <R.MenuListItem
+                        style={{
+                          gap: 10,
+                          alignItems: "center",
+                          cursor: "pointer",
+                        }}
+                        onClick={() => {
+                          handleClick("notion");
+                        }}
+                      >
+                        <img className="icon" src={Book} alt="" />
+                        <R.Anchor>Documentation</R.Anchor>
+                      </R.MenuListItem>
+                      <R.Divider />
+                      <R.MenuListItem
+                        style={{
+                          gap: 10,
+                          alignItems: "center",
+                          cursor: "pointer",
+                        }}
+                        onClick={() => {
+                          handleClick("exit");
+                        }}
+                      >
+                        <img src={Off} alt="" />
+                        <R.Anchor>Exit</R.Anchor>
+                      </R.MenuListItem>
+                    </R.MenuList>
+                  )}
+                  <R.Handle
+                    style={{
+                      height: "45px",
+                    }}
+                  ></R.Handle>
+                  {about && (
+                    <R.Button
+                      primary
                       onClick={() => {
-                        handleClick("notion");
+                        handleIconClick("about");
+                      }}
+                      size="lg"
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 10,
+                        fontWeight: "bold",
                       }}
                     >
-                      <img className="icon" src={Book} alt="" />
-                      <R.Anchor>Documentation</R.Anchor>
-                    </R.MenuListItem>
-                    <R.Divider />
-                    <R.MenuListItem
-                      style={{
-                        gap: 10,
-                        alignItems: "center",
-                        cursor: "pointer",
-                      }}
+                      <img src={About} className="icon" />
+                      About Me
+                    </R.Button>
+                  )}
+                  {project && (
+                    <R.Button
+                      primary
                       onClick={() => {
-                        handleClick("exit");
+                        handleIconClick("project");
+                      }}
+                      size="lg"
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 10,
+                        fontWeight: "bold",
                       }}
                     >
-                      <img src={Off} alt="" />
-                      <R.Anchor>Exit</R.Anchor>
-                    </R.MenuListItem>
-                  </R.MenuList>
-                )}
+                      <img src={Folder} className="icon" />
+                      Projects
+                    </R.Button>
+                  )}
+                  {contact && (
+                    <R.Button
+                      primary
+                      onClick={() => {
+                        handleIconClick("contact");
+                      }}
+                      size="lg"
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 10,
+                        fontWeight: "bold",
+                      }}
+                    >
+                      <img src={Telephone} className="icon" />
+                      Contact
+                    </R.Button>
+                  )}
+                </div>
                 <R.Avatar
                   square
                   style={{
