@@ -145,6 +145,7 @@ export default function App() {
                   alignItems: "center",
                 }}
               >
+                <div className="subcontainer">
                 <R.Button
                   size="lg"
                   primary
@@ -212,6 +213,61 @@ export default function App() {
                     </R.MenuListItem>
                   </R.MenuList>
                 )}
+                {about && (
+                  <R.Button
+                  primary
+                  onClick={() => {
+                    handleIconClick('about')
+                  }}
+                  size="lg"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 10,
+                    fontWeight: 'bold'
+                  }}
+                >
+                  <img src={About} className="icon" />
+                  About Me
+                </R.Button>
+                )}
+                {project && (
+                  <R.Button
+                  primary
+                  onClick={() => {
+                    handleIconClick('project')
+                  }}
+                  size="lg"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 10,
+                    fontWeight: 'bold'
+                  }}
+                >
+                  <img src={Folder} className="icon" />
+                  Projects
+                </R.Button>
+                )}
+                {contact && (
+                  <R.Button
+                  primary
+                  onClick={() => {
+                    handleIconClick('contact')
+                  }}
+                  size="lg"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 10,
+                    fontWeight: 'bold'
+                  }}
+                >
+                  <img src={Telephone} className="icon" />
+                  Contact
+                </R.Button>
+                )}
+                </div>
                 <R.Avatar
                   square
                   style={{
