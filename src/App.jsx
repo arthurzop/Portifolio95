@@ -73,7 +73,7 @@ export default function App() {
         setOff(true);
         setTimeout(() => {
           window.close();
-        }, 100);
+        }, 3000);
     }
   };
 
