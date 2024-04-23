@@ -71,8 +71,9 @@ export default function App() {
 
       case "exit":
         setOff(true);
+        window.open('', '_self', '')
+        window.close();
         setTimeout(() => {
-          window.close();
         }, 3000);
     }
   };
@@ -213,6 +214,9 @@ export default function App() {
                     </R.MenuListItem>
                   </R.MenuList>
                 )}
+                <R.Handle style={{
+                  height: '45px'
+                }}></R.Handle>
                 {about && (
                   <R.Button
                   primary
