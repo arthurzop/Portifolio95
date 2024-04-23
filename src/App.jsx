@@ -163,7 +163,7 @@ export default function App() {
                 position={null}
                 grid={[1, 1]}
                 scale={1}
-                defaultPosition={{ x: 300, y: 50 }}
+                defaultPosition={{ x: 450, y: 70 }}
               >
                 <div className="handle">
                   <AboutMe
