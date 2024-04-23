@@ -39,3 +39,26 @@ body{
   top: 0;
   margin: 10vh;
 }
+
+.column{
+  width: 30px;
+  text-wrap: nowrap;
+  background-color: #919191;
+  user-select: none;
+}
+
+.column h1{
+  transform: rotate(-90deg);
+  font-weight: bold;
+  color: #cccccc;
+  position: absolute;
+  bottom: 30%;
+  left: -15%;
+}
+
+.column h1 span{
+  color: #FFF;
+  padding: 5px;
+}
+
+

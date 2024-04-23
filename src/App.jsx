@@ -49,8 +49,8 @@ export default function App() {
   let [open, setOpen] = useState(false); //abrir menu
   let [time, setTime] = useState(new Date()); //pegar hora
   let [about, setAbout] = useState(true); //abrir/fechar about me
-  let [project, setProject] = useState(true); //abrir/fechar app project
-  let [contact, setContact] = useState(true); //abrir/fechar app contact
+  let [project, setProject] = useState(false); //abrir/fechar app project
+  let [contact, setContact] = useState(false); //abrir/fechar app contact
   let [off, setOff] = useState(false); //abrir pagina de saida
 
   useEffect(() => {
@@ -201,13 +201,24 @@ export default function App() {
                     menu
                   </R.Button>
                   {open && (
+                    
                     <R.MenuList
                       style={{
                         position: "absolute",
                         left: 0,
                         bottom: "100%",
+                        zIndex: 10,
+                        display: 'flex',
                       }}
                     >
+                      <div className="column">
+                        <h1>portfolio
+                          <span>
+                            95
+                          </span>
+                        </h1>
+                      </div>
+                      <div>
                       <R.MenuListItem
                         style={{
                           gap: 10,
@@ -249,6 +260,7 @@ export default function App() {
                         <img src={Off} alt="" />
                         <R.Anchor>sair</R.Anchor>
                       </R.MenuListItem>
+                      </div>
                     </R.MenuList>
                   )}
                   <R.Handle
