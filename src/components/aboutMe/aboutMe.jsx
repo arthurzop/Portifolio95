@@ -35,7 +35,7 @@ export default function AboutMe({ logic }) {
             justifyContent: "space-between",
           }}
         >
-          about me .exe
+          sobre_mim.exe
           <R.Button onClick={logic}>X</R.Button>
         </R.WindowHeader>
         <R.WindowContent>
@@ -49,7 +49,7 @@ export default function AboutMe({ logic }) {
                 textWrap: "nowrap",
               }}
             >
-              Overview
+              visao geral
             </R.Tab>
             <R.Tab
               value={1}
@@ -60,7 +60,7 @@ export default function AboutMe({ logic }) {
                 textWrap: "nowrap",
               }}
             >
-              Working On
+              em progresso
             </R.Tab>
             <R.Tab
               value={2}
@@ -71,13 +71,13 @@ export default function AboutMe({ logic }) {
                 textWrap: "nowrap",
               }}
             >
-              Skills
+              habilidades
             </R.Tab>
           </R.Tabs>
           <R.TabBody>
             {activeTab === 0 && (
               <R.GroupBox
-                label="About Me"
+                label="sobre mim"
                 style={{
                   display: "flex",
                   gap: 20,
@@ -86,51 +86,51 @@ export default function AboutMe({ logic }) {
               >
                 <img src={Eu} className="about-image" />
                 <div className="about-text">
-                  <h1>Artur Medeiros</h1>
-                  <p>São Paulo, Brasil</p>
+                  <h1>artur medeiros</h1>
+                  <p>são paulo, brasil</p>
                   <R.Divider />
                   <h2>
-                    I'm 20 years old, full time student at Senai-SP. Front-End &
-                    Design focused.
+                    tenho 20 anos, estudante do senai sao paulo.
+                    focado em front-end & web design
                   </h2>
-                  <h3>Welcome to my Portfolio!</h3>
+                  <h3>welcome to my portfolio!!</h3>
                 </div>
               </R.GroupBox>
             )}
             {activeTab === 1 && (
-              <R.GroupBox label="Working On">
+              <R.GroupBox label="progredindo...">
                 <R.ScrollView>
                 <div className="currently-text">
-                  <h2>Studying:</h2>
+                  <h2>estudando:</h2>
                   <ul>
-                    <li>React</li>
-                    <li>PHP</li>
-                    <li>Web Design</li>
-                    <li>UI/UX Interface</li>
+                    <li>react</li>
+                    <li>php</li>
+                    <li>web design</li>
+                    <li>interface ui/ux</li>
                   </ul>
                   <R.Divider />
-                  <h2>Projects:</h2>
+                  <h2>projetos:</h2>
                   <ul>
-                    <li>Personal Portfolio</li>
+                    <li>portfolio pessoal</li>
                     <li>
-                      Final Project (React)
+                      trabalho de conclusao de curso (tcc)
                       <li>
                         <R.Anchor
                           href="https://github.com/arthurzop/tcc-front.git"
                           target="_blank"
                         >
-                          Github Repo
+                          repositorio no github
                         </R.Anchor>
                       </li>
                     </li>
                     <li>
-                      Mobile Applications (React Native)
+                      aplicacoes mobile (em react native)
                       <li>
                         <R.Anchor
                           href="https://github.com/arthurzop/calcChurras-native.git"
                           target="_blank"
                         >
-                          Github Repo
+                          repositorio no github
                         </R.Anchor>
                       </li>
                     </li>
@@ -140,30 +140,30 @@ export default function AboutMe({ logic }) {
               </R.GroupBox>
             )}
             {activeTab === 2 && (
-              <R.GroupBox label="Skills">
+              <R.GroupBox label="minhas habilidades >:)">
                 <R.ScrollView style={{ height: 400 }}>
                   <div className="currently-text">
-                    <h2>Languages & Frameworks:</h2>
+                    <h2>linguagens & frameworks:</h2>
                     <ul>
-                      <li>JavaScript</li>
-                      <li>ReactJS</li>
-                      <li>React Native</li>
-                      <li>Styled Components</li>
-                      <li>HTML / CSS</li>
-                      <li>BootStrap</li>
+                      <li>javascript</li>
+                      <li>react.js</li>
+                      <li>react native</li>
+                      <li>styled components</li>
+                      <li>html / css</li>
+                      <li>bootstrap</li>
                     </ul>
                     <R.Divider />
-                    <h2>Tech:</h2>
+                    <h2>tecnologias:</h2>
                     <ul>
-                      <li>Git</li>
-                      <li>Figma</li>
-                      <li>Notion</li>
+                      <li>git / github</li>
+                      <li>figma</li>
+                      <li>notion</li>
                     </ul>
                     <R.Divider />
-                    <h2>Agile Methodology:</h2>
+                    <h2>metodologias ageis:</h2>
                     <ul>
-                      <li>Scrum</li>
-                      <li>Kanbam</li>
+                      <li>scrum</li>
+                      <li>kanbam</li>
                     </ul>
                   </div>
                 </R.ScrollView>

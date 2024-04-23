@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import * as R from "react95";
+import * as T from 'react95/dist/themes' //temas do react95
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import Draggable from "react-draggable";
 
@@ -13,8 +14,7 @@ import Off from "./assets/Off.ico";
 import Folder from "./assets/Projects.ico";
 import Telephone from "./assets/Contact.ico";
 
-/*Pegando o tema original do React 95*/
-import original from "react95/dist/themes/original";
+
 
 // Importando as fontes do React 95
 import ms_sans_serif from "react95/dist/fonts/ms_sans_serif.woff2";
@@ -94,17 +94,17 @@ export default function App() {
       {off && <OffScreen />}
       <body>
         <GlobalStyles />
-        <ThemeProvider theme={original}>
+        <ThemeProvider theme={T.original}>
           <div className="apps-container">
             <AppIcon
-              label={"About Me"}
+              label={"sobre mim"}
               img={About}
               logic={() => {
                 handleIconClick("about");
               }}
             />
             <AppIcon
-              label={"Projects"}
+              label={"projetos"}
               img={Folder}
               logic={() => {
                 handleIconClick("project");
@@ -112,7 +112,7 @@ export default function App() {
             />
 
             <AppIcon
-              label={"Contact"}
+              label={"contato"}
               img={Telephone}
               logic={() => {
                 handleIconClick("contact");
@@ -198,7 +198,7 @@ export default function App() {
                     active={open} //se tiver true, fica active (afundado)
                   >
                     <img className="icon" src={Windows} />
-                    Menu
+                    menu
                   </R.Button>
                   {open && (
                     <R.MenuList
@@ -219,7 +219,7 @@ export default function App() {
                         }}
                       >
                         <img className="icon" src={Dark_Agent} alt="" />
-                        <R.Anchor>My Github</R.Anchor>
+                        <R.Anchor>meu github</R.Anchor>
                       </R.MenuListItem>
                       <R.Divider />
                       <R.MenuListItem
@@ -233,7 +233,7 @@ export default function App() {
                         }}
                       >
                         <img className="icon" src={Book} alt="" />
-                        <R.Anchor>Documentation</R.Anchor>
+                        <R.Anchor>documentacao</R.Anchor>
                       </R.MenuListItem>
                       <R.Divider />
                       <R.MenuListItem
@@ -247,7 +247,7 @@ export default function App() {
                         }}
                       >
                         <img src={Off} alt="" />
-                        <R.Anchor>Exit</R.Anchor>
+                        <R.Anchor>sair</R.Anchor>
                       </R.MenuListItem>
                     </R.MenuList>
                   )}
@@ -270,7 +270,7 @@ export default function App() {
                       }}
                     >
                       <img src={About} className="icon" />
-                      About Me
+                      sobre mim
                     </R.Button>
                   )}
                   {project && (
@@ -287,7 +287,7 @@ export default function App() {
                       }}
                     >
                       <img src={Folder} className="icon" />
-                      Projects
+                      meus projetos
                     </R.Button>
                   )}
                   {contact && (
@@ -304,7 +304,7 @@ export default function App() {
                       }}
                     >
                       <img src={Telephone} className="icon" />
-                      Contact
+                      contato
                     </R.Button>
                   )}
                 </div>

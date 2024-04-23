@@ -28,8 +28,7 @@ export default function Projects({ logic }) {
           width: 650,
           height: "fit-content",
           userSelect: "text",
-          zIndex: 2
-
+          zIndex: 2,
         }}
       >
         <R.WindowHeader
@@ -39,7 +38,7 @@ export default function Projects({ logic }) {
             justifyContent: "space-between",
           }}
         >
-          my projects.exe
+          meus_projetos.exe
           <R.Button onClick={logic}>X</R.Button>
         </R.WindowHeader>
         <R.WindowContent>
@@ -53,7 +52,7 @@ export default function Projects({ logic }) {
                 textWrap: "nowrap",
               }}
             >
-              Overview
+              visao geral
             </R.Tab>
             <R.Tab
               value={1}
@@ -64,7 +63,7 @@ export default function Projects({ logic }) {
                 textWrap: "nowrap",
               }}
             >
-              Final Project
+              meu tcc
             </R.Tab>
             <R.Tab
               value={2}
@@ -75,7 +74,7 @@ export default function Projects({ logic }) {
                 textWrap: "nowrap",
               }}
             >
-              SOS Landing Page
+              landing page sos
             </R.Tab>
             <R.Tab
               value={3}
@@ -86,30 +85,30 @@ export default function Projects({ logic }) {
                 textWrap: "nowrap",
               }}
             >
-              This Portfolio
+              esse portfolio!
             </R.Tab>
           </R.Tabs>
           <R.TabBody>
             {activeTab === 0 && (
               <R.GroupBox
-                label="Overview"
+                label="visao geral"
                 style={{
                   display: "flex",
                   gap: 20,
                 }}
               >
                 <div className="text-container">
-                  <h1>Welcome to My Projects!</h1>
+                  <h1>bem vindo aos meus projetos!</h1>
                   <R.Divider />
                   <h2>
-                    In this section you'll be able to see some of my projects,
-                    oly the most remarklable ones :P
+                    nessa sessao vc vai poder ver algum dos meus projetos,{" "}
+                    <br /> mas apenas os destaques :v
                     <br />
-                    You can always see some more in my{" "}
+                    voce pode ver mais no meu {""}
                     <R.Anchor href="https://github.com/arthurzop">
-                      Github page
+                      github
                     </R.Anchor>{" "}
-                    or get in touch, if you want to!
+                    ou entrar em contato, se quiser!
                   </h2>
                   <img src={comic} alt="" className="comic" />
                 </div>
@@ -129,27 +128,26 @@ export default function Projects({ logic }) {
                     <img src={project2} alt="" className="project-image" />
                   </div>
                   <div className="text-container">
-                    <h1>Espaco Maker 3D</h1>
+                    <h1>espaco maker 3d</h1>
                     <R.Divider />
                     <h2>
-                      This is the final project of my school, so i can graduate.
-                      It's a system, for the school itself, that lets the
-                      students schedule a 3D Printer and print the desired
-                      piece.
+                      esse e o projeto final do senai, para conclusao do curso.
+                      ele e um sistema que permite os estudantes agendem e
+                      imprimam usando as impressoras 3d da escola.
                     </h2>
                     <h2>
                       <R.Anchor
                         href="https://github.com/arthurzop/tcc-front.git"
                         target="_blank"
                       >
-                        Github Repo
+                        repositorio no github
                       </R.Anchor>
                       <br />
                       <R.Anchor
                         href="https://www.figma.com/file/qDJCO4VNlhh9HOTGCemF69/TCC?type=design&node-id=0%3A1&mode=design&t=BPq1wcYIyGpSIVHH-1"
                         target="_blank"
                       >
-                        Figma File
+                        projeto no figma
                       </R.Anchor>
                     </h2>
                   </div>
@@ -170,27 +168,27 @@ export default function Projects({ logic }) {
                     <img src={project4} alt="" className="project-image" />
                   </div>
                   <div className="text-container">
-                    <h1>Landing Page - SOS</h1>
+                    <h1>sos - landing page</h1>
                     <R.Divider />
                     <h2>
-                      This one is a design focused project, I made it for my web
-                      design class. It's a Landing Page inspired by Sza's record
-                      'SOS'. In this one i let my imagination free to create
-                      more of an art than a website.
+                      esse projeto e focado 100% no design, fiz para minhas
+                      aulas de web design. é uma landing page baseada no album
+                      sos, da sza. nesse aqui deixei minha imaginacao correr
+                      livre para criar mais uma 'arte' do que um site.
                     </h2>
                     <h2>
                       <R.Anchor
                         href="https://github.com/arthurzop/sos.git"
                         target="_blank"
                       >
-                        Github Repo
+                        repositorio no github
                       </R.Anchor>
                       <br />
                       <R.Anchor
                         href="https://www.figma.com/file/IYA9A4wRi4m05ywpyVd9O5/SOS-landing?type=design&mode=design&t=BPq1wcYIyGpSIVHH-1"
                         target="_blank"
                       >
-                        Figma File
+                        projeto no figma
                       </R.Anchor>
                     </h2>
                   </div>
@@ -200,17 +198,19 @@ export default function Projects({ logic }) {
             {activeTab === 3 && (
               <R.GroupBox>
                 <div className="text-container">
-                  <h1>This Portfolio Itself!!</h1>
+                  <h1>esse portfolio por si so!!</h1>
                   <R.Divider />
                   <h2>
-                    I'm very very proud of this one. I've knew this React95 Lib
-                    for months and never got to use it, then came to the idea to
-                    do my own personal portfolio with it :D and, being me, i put
-                    my max into this one.
+                    eu to muito muito orgulhoso desse aqui. eu ja conheco a lib
+                    react95 faz uns meses mas nunca tive a oportunidade de usar
+                    ela, ate chegar na ideia de usar ela para criar meu proprio
+                    portfolio pessoal :) e eu, sendo eu, coloquei meu maximo
+                    nesse projeto aqui.
                     <br />
-                    <br />I love this 'old' internet / computer aesthetic and
-                    geting to use it to express myself and my work it's very
-                    rewarding.
+                    <br />
+                    eu amo essa estetica de internet antiga e computadores
+                    antigos! entao poder usar para expressar meu trabalho, meus
+                    gostos e minha estetica é bem recompensador!
                   </h2>
                 </div>
               </R.GroupBox>

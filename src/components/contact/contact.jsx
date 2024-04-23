@@ -96,7 +96,7 @@ export default function Contact({ logic }) {
             justifyContent: "space-between",
           }}
         >
-          contact me.exe
+          contato.exe
           <R.Button onClick={logic}>X</R.Button>
         </R.WindowHeader>
 
@@ -111,7 +111,7 @@ export default function Contact({ logic }) {
                 textWrap: "nowrap",
               }}
             >
-              Email-me
+              enviar um email
             </R.Tab>
             <R.Tab
               value={1}
@@ -122,21 +122,21 @@ export default function Contact({ logic }) {
                 textWrap: "nowrap",
               }}
             >
-              Other Socials
+              redes sociais
             </R.Tab>
           </R.Tabs>
           <R.TabBody>
             {activeTab === 0 && (
               <R.GroupBox label="Contact App">
                 <form onSubmit={sendEmail} ref={form}>
-                  <h1>Feel free to send me anything on your mind !</h1>
+                  <h1>sinta-se livre pra me mandar perguntas ou qualquer coisa em mente !</h1>
 
                   <>
-                    <label htmlFor="">Your Name:</label>
+                    <label htmlFor="">seu nome:</label>
                     <R.TextInput
                       type="text"
                       name="from_name"
-                      placeholder="Artur :)"
+                      placeholder="artur O.o"
                       value={nome}
                       onChange={(e) => {
                         setNome(e.target.value);
@@ -144,7 +144,7 @@ export default function Contact({ logic }) {
                     />
                   </>
                   <>
-                    <label>Your E-mail:</label>
+                    <label>seu email:</label>
                     <R.TextInput
                       type="email"
                       name="email"
@@ -156,13 +156,13 @@ export default function Contact({ logic }) {
                     />
                   </>
                   <>
-                    <label>Message/Questions:</label>
+                    <label>mensagens/perguntas</label>
                     <R.TextInput
                       multiline
                       rows={6}
                       type="text"
                       name="message"
-                      placeholder="Talk about you too!!"
+                      placeholder="fale sobre voce tambem!"
                       value={mensagem}
                       onChange={(e) => {
                         setMensagem(e.target.value);
@@ -177,9 +177,9 @@ export default function Contact({ logic }) {
                       fontWeight: "bold",
                     }}
                     type="submit"
-                    value="Send"
+                    value="enviar"
                   >
-                    Send!
+                    enviar !!
                   </R.Button>
                 </form>
               </R.GroupBox>
@@ -194,7 +194,7 @@ export default function Contact({ logic }) {
                     }}
                   >
                     <img src={Linkedin} className="social-image" />
-                    <R.Anchor>Linkedin</R.Anchor>
+                    <R.Anchor>linkedin</R.Anchor>
                   </a>
                   <a
                     className="row-container"
@@ -203,7 +203,7 @@ export default function Contact({ logic }) {
                     }}
                   >
                     <img src={Github} className="social-image" />
-                    <R.Anchor>Github</R.Anchor>
+                    <R.Anchor>github</R.Anchor>
                   </a>
                   <a
                     className="row-container"
@@ -212,7 +212,7 @@ export default function Contact({ logic }) {
                     }}
                   >
                     <img src={Instagram} className="social-image" />
-                    <R.Anchor>Instagram</R.Anchor>
+                    <R.Anchor>instagram</R.Anchor>
                   </a>
                 </div>
               </R.GroupBox>
