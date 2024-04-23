@@ -22,8 +22,6 @@ export default function AboutMe({ logic }) {
       <R.Window
         style={{
           position: "absolute",
-          top: "20%",
-          left: "30%",
           width: 650,
           height: "fit-content",
           userSelect: "text",

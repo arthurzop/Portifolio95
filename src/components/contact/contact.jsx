@@ -29,8 +29,6 @@ export default function Contact({ logic }) {
       <R.Window
         style={{
           position: "absolute",
-          top: "10%",
-          left: "10%",
           width: 650,
           height: "fit-content",
           userSelect: "text",
