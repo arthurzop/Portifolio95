@@ -4,30 +4,50 @@ import "./contact.css";
 import emailjs from "@emailjs/browser";
 
 //images
-import Linkedin from '../../assets/Linkedin.ico'
-import Instagram from '../../assets/Instagram.ico'
-import Github from '../../assets/Github.ico'
+import Linkedin from "../../assets/Linkedin.ico";
+import Instagram from "../../assets/Instagram.ico";
+import Github from "../../assets/Github.ico";
 
 export default function Contact({ logic }) {
+  const [email, setEmail] = useState("");
+  const [nome, setNome] = useState("");
+  const [mensagem, setMensagem] = useState("");
+
+  const [open, isOpen] = useState(true);
+
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
+    if (email == "" || nome == "" || mensagem == "") {
+      alert("Please fill every area!");
+      e.target.reset()
+    } else {
+      
 
-    emailjs
-      .sendForm("service_slt4q1m", "template_6vh5wgf", form.current, {
-        publicKey: "2ZityfBO0AZhFtPQP",
-      })
-      .then(
-        () => {
-          console.log("success!");
-        },
-        (error) => {
-          console.log("failed", error.text);
-        }
-      );
+      emailjs
+        .sendForm("service_slt4q1m", "template_6vh5wgf", form.current, {
+          publicKey: "2ZityfBO0AZhFtPQP",
+        })
+        .then(
+          () => {
+            console.log("success!");
+          },
+          (error) => {
+            console.log("failed", error.text);
+          }
+        );
+      
+    }
+    setNull()
     e.target.reset();
   };
+
+  const setNull = () => {
+    setEmail('')
+    setNome('')
+    setMensagem('')
+  }
 
   const [state, setState] = useState({
     activeTab: 0,
@@ -40,21 +60,23 @@ export default function Contact({ logic }) {
   const { activeTab } = state;
 
   const handleClick = (name) => {
-    switch (name){
-      case 'linkedin':
-        let win = window.open('https://www.linkedin.com/in/artur-medeiros-7169b8266/', '_blank');
+    switch (name) {
+      case "linkedin":
+        let win = window.open(
+          "https://www.linkedin.com/in/artur-medeiros-7169b8266/",
+          "_blank"
+        );
         win.focus();
 
-      case 'github':
+      case "github":
         win = window.open("https://github.com/arthurzop", "_blank");
         win.focus();
 
-      case 'instagram':
+      case "instagram":
         win = window.open("https://instagram.com/arthurzop", "_blank");
         win.focus();
-
     }
-  }
+  };
 
   return (
     <>
@@ -77,6 +99,7 @@ export default function Contact({ logic }) {
           contact me.exe
           <R.Button onClick={logic}>X</R.Button>
         </R.WindowHeader>
+
         <R.WindowContent>
           <R.Tabs value={activeTab} onChange={handleChange}>
             <R.Tab
@@ -114,6 +137,10 @@ export default function Contact({ logic }) {
                       type="text"
                       name="from_name"
                       placeholder="Artur :)"
+                      value={nome}
+                      onChange={(e) => {
+                        setNome(e.target.value);
+                      }}
                     />
                   </>
                   <>
@@ -122,6 +149,10 @@ export default function Contact({ logic }) {
                       type="email"
                       name="email"
                       placeholder="email@email.com"
+                      value={email}
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                      }}
                     />
                   </>
                   <>
@@ -132,6 +163,10 @@ export default function Contact({ logic }) {
                       type="text"
                       name="message"
                       placeholder="Talk about you too!!"
+                      value={mensagem}
+                      onChange={(e) => {
+                        setMensagem(e.target.value);
+                      }}
                     />
                   </>
                   <R.Button
@@ -152,23 +187,32 @@ export default function Contact({ logic }) {
             {activeTab === 1 && (
               <R.GroupBox>
                 <div className="social-container">
-                  <a className="row-container" onClick={() => {handleClick('linkedin')}}>
-                      <img src={Linkedin} className="social-image"/>
-                    <R.Anchor>
-                      Linkedin
-                    </R.Anchor>
+                  <a
+                    className="row-container"
+                    onClick={() => {
+                      handleClick("linkedin");
+                    }}
+                  >
+                    <img src={Linkedin} className="social-image" />
+                    <R.Anchor>Linkedin</R.Anchor>
                   </a>
-                  <a className="row-container" onClick={() => {handleClick('github')}}>
-                      <img src={Github} className="social-image"/>
-                    <R.Anchor>
-                      Github
-                    </R.Anchor>
+                  <a
+                    className="row-container"
+                    onClick={() => {
+                      handleClick("github");
+                    }}
+                  >
+                    <img src={Github} className="social-image" />
+                    <R.Anchor>Github</R.Anchor>
                   </a>
-                  <a className="row-container" onClick={() => {handleClick('instagram')}}>
-                      <img src={Instagram} className="social-image"/>
-                    <R.Anchor>
-                      Instagram
-                    </R.Anchor>
+                  <a
+                    className="row-container"
+                    onClick={() => {
+                      handleClick("instagram");
+                    }}
+                  >
+                    <img src={Instagram} className="social-image" />
+                    <R.Anchor>Instagram</R.Anchor>
                   </a>
                 </div>
               </R.GroupBox>
