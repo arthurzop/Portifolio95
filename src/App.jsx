@@ -103,24 +103,6 @@ export default function App() {
                 handleIconClick("about");
               }}
             />
-            {about && (
-              <Draggable
-                axis="both"
-                handle=".handle"
-                position={null}
-                grid={[1, 1]}
-                scale={1}
-                defaultPosition={{ x: 400, y: 50 }}
-              >
-                <div className="handle">
-                  <AboutMe
-                    logic={() => {
-                      setAbout(!about);
-                    }}
-                  />
-                </div>
-              </Draggable>
-            )}
             <AppIcon
               label={"Projects"}
               img={Folder}
@@ -128,6 +110,16 @@ export default function App() {
                 handleIconClick("project");
               }}
             />
+
+            <AppIcon
+              label={"Contact"}
+              img={Telephone}
+              logic={() => {
+                handleIconClick("contact");
+              }}
+            />
+          </div>
+          <div className="open-apps-container">
             {project && (
               <Draggable
                 axis="both"
@@ -135,7 +127,8 @@ export default function App() {
                 position={null}
                 grid={[1, 1]}
                 scale={1}
-                defaultPosition={{ x: 1000, y: 50 }}
+                defaultPosition={{ x: 1000, y: 0 }}
+                allowAnyClick
               >
                 <div className="handle">
                   <Projects
@@ -146,13 +139,6 @@ export default function App() {
                 </div>
               </Draggable>
             )}
-            <AppIcon
-              label={"Contact"}
-              img={Telephone}
-              logic={() => {
-                handleIconClick("contact");
-              }}
-            />
             {contact && (
               <Draggable
                 axis="both"
@@ -165,6 +151,24 @@ export default function App() {
                   <Contact
                     logic={() => {
                       setContact(!contact);
+                    }}
+                  />
+                </div>
+              </Draggable>
+            )}
+            {about && (
+              <Draggable
+                axis="both"
+                handle=".handle"
+                position={null}
+                grid={[1, 1]}
+                scale={1}
+                defaultPosition={{ x: 300, y: 50 }}
+              >
+                <div className="handle">
+                  <AboutMe
+                    logic={() => {
+                      setAbout(!about);
                     }}
                   />
                 </div>
