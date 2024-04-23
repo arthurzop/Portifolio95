@@ -258,7 +258,6 @@ export default function App() {
                   ></R.Handle>
                   {about && (
                     <R.Button
-                      primary
                       onClick={() => {
                         handleIconClick("about");
                       }}
@@ -276,7 +275,6 @@ export default function App() {
                   )}
                   {project && (
                     <R.Button
-                      primary
                       onClick={() => {
                         handleIconClick("project");
                       }}
@@ -294,7 +292,6 @@ export default function App() {
                   )}
                   {contact && (
                     <R.Button
-                      primary
                       onClick={() => {
                         handleIconClick("contact");
                       }}

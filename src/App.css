@@ -23,7 +23,7 @@ body{
   flex-wrap: wrap;
   width: fit-content;
   max-height: 95vh;
-  gap: 1vh;
+  gap: 2vh;
   padding: 3vh;
 }
 
