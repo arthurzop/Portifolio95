@@ -207,7 +207,7 @@ export default function App() {
                         position: "absolute",
                         left: 0,
                         bottom: "100%",
-                        zIndex: 10,
+                        zIndex: 9,
                         display: 'flex',
                       }}
                     >
