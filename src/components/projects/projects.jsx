@@ -9,7 +9,7 @@ import project3 from "../../assets/project3.png";
 import project4 from "../../assets/project4.png";
 import comic from "../../assets/comic.gif";
 
-export default function Projects({ logic }) {
+export default function Projects({ logic, handle }) {
   const [state, setState] = useState({
     activeTab: 0,
   });
@@ -31,16 +31,18 @@ export default function Projects({ logic }) {
           zIndex: 2,
         }}
       >
-        <R.WindowHeader
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          meus_projetos.exe
-          <R.Button onClick={logic}>X</R.Button>
-        </R.WindowHeader>
+        <div className={`${handle}`}>
+          <R.WindowHeader
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            meus_projetos.exe
+            <R.Button onClick={logic}>X</R.Button>
+          </R.WindowHeader>
+        </div>
         <R.WindowContent>
           <R.Tabs value={activeTab} onChange={handleChange}>
             <R.Tab
@@ -201,7 +203,7 @@ export default function Projects({ logic }) {
                   <h1>esse portfolio por si so!!</h1>
                   <R.Divider />
                   <h2>
-                    eu to muito muito orgulhoso desse aqui. eu ja conheco a lib
+                    eu to muito muito orgulhoso desse aqui. eu ja conhecia a lib
                     react95 faz uns meses mas nunca tive a oportunidade de usar
                     ela, ate chegar na ideia de usar ela para criar meu proprio
                     portfolio pessoal :) e eu, sendo eu, coloquei meu maximo

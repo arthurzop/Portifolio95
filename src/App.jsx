@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import * as R from "react95";
-import * as T from 'react95/dist/themes' //temas do react95
+import * as T from "react95/dist/themes"; //temas do react95
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import Draggable from "react-draggable";
 
@@ -13,8 +13,6 @@ import About from "./assets/About.ico";
 import Off from "./assets/Off.ico";
 import Folder from "./assets/Projects.ico";
 import Telephone from "./assets/Contact.ico";
-
-
 
 // Importando as fontes do React 95
 import ms_sans_serif from "react95/dist/fonts/ms_sans_serif.woff2";
@@ -71,12 +69,20 @@ export default function App() {
         win.focus();
 
       case "exit":
+        setNull();
         setOff(true);
+
         setTimeout(() => {
           window.close();
           setOff(false);
         }, 3000);
     }
+  };
+
+  const setNull = () => {
+    setAbout(false);
+    setContact(false);
+    setProject(false);
   };
 
   const handleIconClick = (icon) => {
@@ -127,14 +133,14 @@ export default function App() {
                 position={null}
                 grid={[1, 1]}
                 scale={1}
-                defaultPosition={{ x: 1000, y: 0 }}
                 allowAnyClick
               >
-                <div className="handle">
+                <div className="">
                   <Projects
                     logic={() => {
                       setProject(!project);
                     }}
+                    handle="handle"
                   />
                 </div>
               </Draggable>
@@ -147,11 +153,12 @@ export default function App() {
                 grid={[1, 1]}
                 scale={1}
               >
-                <div className="handle">
+                <div className="">
                   <Contact
                     logic={() => {
                       setContact(!contact);
                     }}
+                    handle="handle"
                   />
                 </div>
               </Draggable>
@@ -159,17 +166,16 @@ export default function App() {
             {about && (
               <Draggable
                 axis="both"
-                handle=".handle"
-                position={null}
-                grid={[1, 1]}
-                scale={1}
-                defaultPosition={{ x: 450, y: 70 }}
+                handle=".handle" //coloca na classe que pode ser arrastada
+                grid={[1, 1]} //a fluidez do drag (1 é o normal, fluido)
+                scale={1} //quanta 'força' precisa pra arrastar (1 é o normal, fluido)
               >
-                <div className="handle">
+                <div className="">
                   <AboutMe
                     logic={() => {
                       setAbout(!about);
                     }}
+                    handle="handle"
                   />
                 </div>
               </Draggable>
@@ -201,65 +207,63 @@ export default function App() {
                     menu
                   </R.Button>
                   {open && (
-                    
                     <R.MenuList
                       style={{
                         position: "absolute",
                         left: 0,
                         bottom: "100%",
                         zIndex: 9,
-                        display: 'flex',
+                        display: "flex",
                       }}
                     >
                       <div className="column">
-                        <h1>portfolio
-                          <span>
-                            95
-                          </span>
+                        <h1>
+                          portfolio
+                          <span>95</span>
                         </h1>
                       </div>
                       <div>
-                      <R.MenuListItem
-                        style={{
-                          gap: 10,
-                          alignItems: "center",
-                          cursor: "pointer",
-                        }}
-                        onClick={() => {
-                          handleClick("github");
-                        }}
-                      >
-                        <img className="icon" src={Dark_Agent} alt="" />
-                        <R.Anchor>meu github</R.Anchor>
-                      </R.MenuListItem>
-                      <R.Divider />
-                      <R.MenuListItem
-                        style={{
-                          gap: 10,
-                          alignItems: "center",
-                          cursor: "pointer",
-                        }}
-                        onClick={() => {
-                          handleClick("notion");
-                        }}
-                      >
-                        <img className="icon" src={Book} alt="" />
-                        <R.Anchor>documentacao</R.Anchor>
-                      </R.MenuListItem>
-                      <R.Divider />
-                      <R.MenuListItem
-                        style={{
-                          gap: 10,
-                          alignItems: "center",
-                          cursor: "pointer",
-                        }}
-                        onClick={() => {
-                          handleClick("exit");
-                        }}
-                      >
-                        <img src={Off} alt="" />
-                        <R.Anchor>sair</R.Anchor>
-                      </R.MenuListItem>
+                        <R.MenuListItem
+                          style={{
+                            gap: 10,
+                            alignItems: "center",
+                            cursor: "pointer",
+                          }}
+                          onClick={() => {
+                            handleClick("github");
+                          }}
+                        >
+                          <img className="icon" src={Dark_Agent} alt="" />
+                          <R.Anchor>meu github</R.Anchor>
+                        </R.MenuListItem>
+                        <R.Divider />
+                        <R.MenuListItem
+                          style={{
+                            gap: 10,
+                            alignItems: "center",
+                            cursor: "pointer",
+                          }}
+                          onClick={() => {
+                            handleClick("notion");
+                          }}
+                        >
+                          <img className="icon" src={Book} alt="" />
+                          <R.Anchor>documentacao</R.Anchor>
+                        </R.MenuListItem>
+                        <R.Divider />
+                        <R.MenuListItem
+                          style={{
+                            gap: 10,
+                            alignItems: "center",
+                            cursor: "pointer",
+                          }}
+                          onClick={() => {
+                            handleClick("exit");
+                          }}
+                        >
+                          <img src={Off} alt="" />
+                          <R.Anchor>sair</R.Anchor>
+                        </R.MenuListItem>
                       </div>
                     </R.MenuList>
                   )}
@@ -328,7 +332,7 @@ export default function App() {
                     alignItems: "center",
                     display: "flex",
                     fontWeight: "bold",
-                    paddingInline: 25,
+                    paddingInline: 20,
                     paddingTop: 5,
                   }}
                 >

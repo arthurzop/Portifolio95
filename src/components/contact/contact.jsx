@@ -8,7 +8,7 @@ import Linkedin from "../../assets/Linkedin.ico";
 import Instagram from "../../assets/Instagram.ico";
 import Github from "../../assets/Github.ico";
 
-export default function Contact({ logic }) {
+export default function Contact({ logic, handle }) {
   const [email, setEmail] = useState("");
   const [nome, setNome] = useState("");
   const [mensagem, setMensagem] = useState("");
@@ -21,10 +21,8 @@ export default function Contact({ logic }) {
     e.preventDefault();
     if (email == "" || nome == "" || mensagem == "") {
       alert("Please fill every area!");
-      e.target.reset()
+      e.target.reset();
     } else {
-      
-
       emailjs
         .sendForm("service_slt4q1m", "template_6vh5wgf", form.current, {
           publicKey: "2ZityfBO0AZhFtPQP",
@@ -37,17 +35,16 @@ export default function Contact({ logic }) {
             console.log("failed", error.text);
           }
         );
-      
     }
-    setNull()
+    setNull();
     e.target.reset();
   };
 
   const setNull = () => {
-    setEmail('')
-    setNome('')
-    setMensagem('')
-  }
+    setEmail("");
+    setNome("");
+    setMensagem("");
+  };
 
   const [state, setState] = useState({
     activeTab: 0,
@@ -89,16 +86,18 @@ export default function Contact({ logic }) {
           zIndex: 1,
         }}
       >
-        <R.WindowHeader
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-          }}
-        >
-          contato.exe
-          <R.Button onClick={logic}>X</R.Button>
-        </R.WindowHeader>
+        <div className={`${handle}`}>
+          <R.WindowHeader
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            contato.exe
+            <R.Button onClick={logic}>X</R.Button>
+          </R.WindowHeader>
+        </div>
 
         <R.WindowContent>
           <R.Tabs value={activeTab} onChange={handleChange}>
@@ -129,7 +128,10 @@ export default function Contact({ logic }) {
             {activeTab === 0 && (
               <R.GroupBox label="Contact App">
                 <form onSubmit={sendEmail} ref={form}>
-                  <h1>sinta-se livre pra me mandar perguntas ou qualquer coisa em mente !</h1>
+                  <h1>
+                    sinta-se livre pra me mandar perguntas ou qualquer coisa em
+                    mente !
+                  </h1>
 
                   <>
                     <label htmlFor="">seu nome:</label>

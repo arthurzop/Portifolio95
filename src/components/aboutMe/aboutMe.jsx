@@ -5,7 +5,7 @@ import * as R from "react95";
 //images
 import Eu from "../../assets/Eu.png";
 
-export default function AboutMe({ logic }) {
+export default function AboutMe({ logic, handle }) {
   const [state, setState] = useState({
     activeTab: 0,
   });
@@ -22,12 +22,13 @@ export default function AboutMe({ logic }) {
       <R.Window
         style={{
           position: "absolute",
-          width: 650,
+          width: 'fit-content',
           height: "fit-content",
           userSelect: "text",
           zIndex: 3,
         }}
       >
+        <div className={`${handle}`}>
         <R.WindowHeader
           style={{
             display: "flex",
@@ -38,6 +39,7 @@ export default function AboutMe({ logic }) {
           sobre_mim.exe
           <R.Button onClick={logic}>X</R.Button>
         </R.WindowHeader>
+        </div>
         <R.WindowContent>
           <R.Tabs value={activeTab} onChange={handleChange}>
             <R.Tab
