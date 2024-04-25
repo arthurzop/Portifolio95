@@ -4,16 +4,22 @@
   border: double 3px;
 }
 
-.about-text, .currently-text, .skills-text {
+.about-text, .currently-text{
   height: 100%;
   width: 200px;
   display: flex;
   flex-direction: column;
-  padding: 2vh 0;
+  padding: 2vh 0vw;
   gap: 10px;
 }
 
+.currently-text{
+  padding: 2vh 1vw;
+
+}
+
 .about-text h1 {
+  text-wrap: nowrap;
   font-size: 1.8em;
 }
 
@@ -25,12 +31,12 @@
   font-weight: bold;
 }
 
-
 .currently-text h2{
     font-weight: bold;
+    text-wrap: nowrap;
 }
 
-.currently-text li, ul{
+.currently-text li{
     list-style: square;
     margin-inline-start: 2vw;
 }
@@ -41,7 +47,6 @@
   text-align: center;
   padding-top: 2vh;
   font-weight: bold;
-
   background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
