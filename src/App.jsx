@@ -17,11 +17,14 @@ import Telephone from "./assets/Contact.ico";
 // Importando as fontes do React 95
 import ms_sans_serif from "react95/dist/fonts/ms_sans_serif.woff2";
 import ms_sans_serif_bold from "react95/dist/fonts/ms_sans_serif_bold.woff2";
+
+//componentes e telas
 import AppIcon from "./components/appIcon/appIcon";
 import OffScreen from "./components/offScreen/offScreen";
 import AboutMe from "./components/aboutMe/aboutMe";
 import Projects from "./components/projects/projects";
 import Contact from "./components/contact/contact";
+import SplashScreen from "./components/splashScreen/splashScreen";
 
 // resetando os estilos globais e  adicionando a fonte personalizada
 const GlobalStyles = createGlobalStyle`
@@ -50,9 +53,16 @@ export default function App() {
   let [project, setProject] = useState(false); //abrir/fechar app project
   let [contact, setContact] = useState(false); //abrir/fechar app contact
   let [off, setOff] = useState(false); //abrir pagina de saida
+  let [isLoading, setIsLoading] = useState(true); //loading pra splash screen
 
   useEffect(() => {
     setInterval(() => setTime(new Date()), 1000);
+  });
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
   });
 
   const handleClick = (item) => {
@@ -95,7 +105,9 @@ export default function App() {
     }
   };
 
-  return (
+  return isLoading ? (
+    <SplashScreen />
+  ) : (
     <>
       {off && <OffScreen />}
       <body>
