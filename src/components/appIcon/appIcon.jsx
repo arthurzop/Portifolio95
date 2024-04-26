@@ -8,7 +8,7 @@ export default function AppIcon({img, label, logic}) {
     <>
       <div className="app" onDoubleClick={logic}>
         <img src={img} alt=" " className="app-icon" />
-        <R.Anchor>{label}</R.Anchor>
+        <p>{label}</p>
       </div>
     </>
   );

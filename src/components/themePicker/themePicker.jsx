@@ -21,6 +21,9 @@ export default function ThemePicker({ logic, handle, childToParent }) {
           </R.WindowHeader>
         </div>
         <R.WindowContent>
+          <p style={{ marginBottom: "2vh", fontWeight: "bold" }}>
+            escolhe um tema :)
+          </p>
           <div className="grid">
             <ThemeProvider theme={T.original}>
               <R.Button
