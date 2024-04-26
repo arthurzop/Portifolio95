@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import * as R from "react95";
 import * as T from "react95/dist/themes"; //temas do react95
+// import theme from 'react95/dist/themes/original'
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import Draggable from "react-draggable";
 
@@ -13,6 +14,7 @@ import About from "./assets/About.ico";
 import Off from "./assets/Off.ico";
 import Folder from "./assets/Projects.ico";
 import Telephone from "./assets/Contact.ico";
+import Palette from './assets/Theme.ico'
 
 // Importando as fontes do React 95
 import ms_sans_serif from "react95/dist/fonts/ms_sans_serif.woff2";
@@ -25,6 +27,7 @@ import AboutMe from "./components/aboutMe/aboutMe";
 import Projects from "./components/projects/projects";
 import Contact from "./components/contact/contact";
 import SplashScreen from "./components/splashScreen/splashScreen";
+import ThemePicker from "./components/themePicker/themePicker";
 
 // resetando os estilos globais e  adicionando a fonte personalizada
 const GlobalStyles = createGlobalStyle`
@@ -52,6 +55,7 @@ export default function App() {
   let [about, setAbout] = useState(true); //abrir/fechar about me
   let [project, setProject] = useState(false); //abrir/fechar app project
   let [contact, setContact] = useState(false); //abrir/fechar app contact
+  let [themePicker, setThemePicker] = useState(false); //abrir/fechar app contact
   let [off, setOff] = useState(false); //abrir pagina de saida
   let [isLoading, setIsLoading] = useState(true); //loading pra splash screen
 
@@ -102,8 +106,18 @@ export default function App() {
       setProject(!project);
     } else if (icon == "contact") {
       setContact(!contact);
+    } else if(icon == 'themes'){
+      setThemePicker(!themePicker)
     }
   };
+
+
+
+  let [choosenTheme, setChoosenTheme] = useState(T.original)
+
+  const childToParent = (childdata) => {
+    setChoosenTheme(childdata)
+  }
 
   return isLoading ? (
     <SplashScreen />
@@ -112,7 +126,7 @@ export default function App() {
       {off && <OffScreen />}
       <body>
         <GlobalStyles />
-        <ThemeProvider theme={T.original}>
+        <ThemeProvider theme={choosenTheme}>
           <div className="apps-container">
             <AppIcon
               label={"sobre mim"}
@@ -134,6 +148,14 @@ export default function App() {
               img={Telephone}
               logic={() => {
                 handleIconClick("contact");
+              }}
+            />
+
+            <AppIcon
+              label={'temas'}
+              img={Palette}
+              logic={() => {
+                handleIconClick('themes')
               }}
             />
           </div>
@@ -189,6 +211,25 @@ export default function App() {
                       setAbout(!about);
                     }}
                     handle="handle"
+                  />
+                </div>
+              </Draggable>
+            )}
+            {themePicker &&(
+              <Draggable
+              axis="both"
+              handle=".handle" //coloca na classe que pode ser arrastada
+              grid={[1, 1]} //a fluidez do drag (1 é o normal, fluido)
+              scale={1} //quanta 'força' precisa pra arrastar (1 é o normal, fluido)
+              defaultPosition={{x: 500, y: 20}}
+              >
+                <div className="">
+                  <ThemePicker
+                    childToParent={childToParent}
+                    logic={() => {
+                      setThemePicker(!themePicker)
+                    }}
+                    handle='handle'
                   />
                 </div>
               </Draggable>
