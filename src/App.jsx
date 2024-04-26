@@ -288,7 +288,7 @@ export default function App() {
                           }}
                         >
                           <img className="icon" src={Dark_Agent} alt="" />
-                          <R.Anchor>meu github</R.Anchor>
+                          <h1>meu github</h1>
                         </R.MenuListItem>
                         <R.Divider />
                         <R.MenuListItem
@@ -302,7 +302,7 @@ export default function App() {
                           }}
                         >
                           <img className="icon" src={Book} alt="" />
-                          <R.Anchor>documentacao</R.Anchor>
+                          <h1>documentacao</h1>
                         </R.MenuListItem>
                         <R.Divider />
                         <R.MenuListItem
@@ -316,7 +316,7 @@ export default function App() {
                           }}
                         >
                           <img src={Off} alt="" />
-                          <R.Anchor>sair</R.Anchor>
+                          <h1>sair</h1>
                         </R.MenuListItem>
                       </div>
                     </R.MenuList>

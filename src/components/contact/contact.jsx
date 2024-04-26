@@ -20,7 +20,7 @@ export default function Contact({ logic, handle }) {
   const sendEmail = (e) => {
     e.preventDefault();
     if (email == "" || nome == "" || mensagem == "") {
-      alert("Please fill every area!");
+      alert("preencha todos os campos :(");
       e.target.reset();
     } else {
       emailjs
