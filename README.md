@@ -1,6 +1,5 @@
 # Portfólio Pessoal
 
-## Descrição
 Este é meu portfólio pessoal, desenvolvido com React e a biblioteca React95, que fornece diversos elementos UI inspirados no Windows 95.
 
 ## Créditos
