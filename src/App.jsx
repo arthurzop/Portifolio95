@@ -181,6 +181,7 @@ export default function App() {
                 handle=".handle" //coloca na classe que pode ser arrastada
                 grid={[1, 1]} //a fluidez do drag (1 é o normal, fluido)
                 scale={1} //quanta 'força' precisa pra arrastar (1 é o normal, fluido)
+                defaultPosition={{x: 500, y: 20}}
               >
                 <div className="">
                   <AboutMe

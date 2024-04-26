@@ -32,7 +32,7 @@ export default function SplashScreen() {
           <img src={Logo} className="logo" />
         </div>
         <div className="progress-container">
-          <ProgressBar  value={percent} variant="tile"/>
+          <ProgressBar value={percent} variant="tile"/>
         </div>
       </div>
     </>
