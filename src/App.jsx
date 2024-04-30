@@ -60,7 +60,7 @@ export default function App() {
   let [themePicker, setThemePicker] = useState(false); //abrir/fechar app contact
   let [off, setOff] = useState(false); //abrir pagina de saida
   let [isLoading, setIsLoading] = useState(true); //loading pra splash screen
-  let [curriculo, setCurriculo] = useState(true);
+  let [curriculo, setCurriculo] = useState(false);
 
   useEffect(() => {
     setInterval(() => setTime(new Date()), 1000);
