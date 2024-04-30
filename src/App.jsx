@@ -14,7 +14,8 @@ import About from "./assets/About.ico";
 import Off from "./assets/Off.ico";
 import Folder from "./assets/Projects.ico";
 import Telephone from "./assets/Contact.ico";
-import Palette from './assets/Theme.ico'
+import Palette from "./assets/Theme.ico";
+import Form from "./assets/Form.ico";
 
 // Importando as fontes do React 95
 import ms_sans_serif from "react95/dist/fonts/ms_sans_serif.woff2";
@@ -28,6 +29,7 @@ import Projects from "./components/projects/projects";
 import Contact from "./components/contact/contact";
 import SplashScreen from "./components/splashScreen/splashScreen";
 import ThemePicker from "./components/themePicker/themePicker";
+import CurriculoApp from "./components/curriculo/curriculo";
 
 // resetando os estilos globais e  adicionando a fonte personalizada
 const GlobalStyles = createGlobalStyle`
@@ -58,6 +60,7 @@ export default function App() {
   let [themePicker, setThemePicker] = useState(false); //abrir/fechar app contact
   let [off, setOff] = useState(false); //abrir pagina de saida
   let [isLoading, setIsLoading] = useState(true); //loading pra splash screen
+  let [curriculo, setCurriculo] = useState(true);
 
   useEffect(() => {
     setInterval(() => setTime(new Date()), 1000);
@@ -106,18 +109,18 @@ export default function App() {
       setProject(!project);
     } else if (icon == "contact") {
       setContact(!contact);
-    } else if(icon == 'themes'){
-      setThemePicker(!themePicker)
+    } else if (icon == "themes") {
+      setThemePicker(!themePicker);
+    } else if (icon == "curriculo") {
+      setCurriculo(!curriculo);
     }
   };
 
-
-
-  let [choosenTheme, setChoosenTheme] = useState(T.original)
+  let [choosenTheme, setChoosenTheme] = useState(T.original);
 
   const childToParent = (childdata) => {
-    setChoosenTheme(childdata)
-  }
+    setChoosenTheme(childdata);
+  };
 
   return isLoading ? (
     <SplashScreen />
@@ -152,10 +155,17 @@ export default function App() {
             />
 
             <AppIcon
-              label={'temas'}
+              label={"temas"}
               img={Palette}
               logic={() => {
-                handleIconClick('themes')
+                handleIconClick("themes");
+              }}
+            />
+            <AppIcon
+              label={`currículo`}
+              img={Form}
+              logic={() => {
+                handleIconClick("curriculo");
               }}
             />
           </div>
@@ -203,7 +213,7 @@ export default function App() {
                 handle=".handle" //coloca na classe que pode ser arrastada
                 grid={[1, 1]} //a fluidez do drag (1 é o normal, fluido)
                 scale={1} //quanta 'força' precisa pra arrastar (1 é o normal, fluido)
-                defaultPosition={{x: 500, y: 20}}
+                defaultPosition={{ x: 500, y: 20 }}
               >
                 <div className="">
                   <AboutMe
@@ -215,21 +225,39 @@ export default function App() {
                 </div>
               </Draggable>
             )}
-            {themePicker &&(
+            {themePicker && (
               <Draggable
-              axis="both"
-              handle=".handle" //coloca na classe que pode ser arrastada
-              grid={[1, 1]} //a fluidez do drag (1 é o normal, fluido)
-              scale={1} //quanta 'força' precisa pra arrastar (1 é o normal, fluido)
-              defaultPosition={{x: 500, y: 20}}
+                axis="both"
+                handle=".handle" //coloca na classe que pode ser arrastada
+                grid={[1, 1]} //a fluidez do drag (1 é o normal, fluido)
+                scale={1} //quanta 'força' precisa pra arrastar (1 é o normal, fluido)
+                defaultPosition={{ x: 500, y: 20 }}
               >
                 <div className="">
                   <ThemePicker
                     childToParent={childToParent}
                     logic={() => {
-                      setThemePicker(!themePicker)
+                      setThemePicker(!themePicker);
                     }}
-                    handle='handle'
+                    handle="handle"
+                  />
+                </div>
+              </Draggable>
+            )}
+            {curriculo && (
+              <Draggable
+                axis="both"
+                handle=".handle" //coloca na classe que pode ser arrastada
+                grid={[1, 1]} //a fluidez do drag (1 é o normal, fluido)
+                scale={1} //quanta 'força' precisa pra arrastar (1 é o normal, fluido)
+                defaultPosition={{ x: 400, y: 20 }}
+              >
+                <div className="">
+                  <CurriculoApp
+                    logic={() => {
+                      setCurriculo(!curriculo);
+                    }}
+                    handle="handle"
                   />
                 </div>
               </Draggable>
@@ -375,6 +403,40 @@ export default function App() {
                     >
                       <img src={Telephone} className="icon" />
                       contato
+                    </R.Button>
+                  )}
+                  {themePicker && (
+                    <R.Button
+                      onClick={() => {
+                        handleIconClick("themes");
+                      }}
+                      size="lg"
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 10,
+                        fontWeight: "bold",
+                      }}
+                    >
+                      <img src={Palette} className="icon" />
+                      temas
+                    </R.Button>
+                  )}
+                  {curriculo && (
+                    <R.Button
+                      onClick={() => {
+                        handleIconClick("curriculo");
+                      }}
+                      size="lg"
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 10,
+                        fontWeight: "bold",
+                      }}
+                    >
+                      <img src={Form} className="icon" />
+                      curriculo
                     </R.Button>
                   )}
                 </div>
