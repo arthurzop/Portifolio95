@@ -58,7 +58,7 @@ export default function App() {
   let [contact, setContact] = useState(false); //abrir/fechar app contact
   let [themePicker, setThemePicker] = useState(false); //abrir/fechar app contact
   let [off, setOff] = useState(false); //abrir pagina de saida
-  let [isLoading, setIsLoading] = useState(false); //loading pra splash screen
+  let [isLoading, setIsLoading] = useState(true); //loading pra splash screen
   let [curriculo, setCurriculo] = useState(false);
 
   useEffect(() => {
