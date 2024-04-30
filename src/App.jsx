@@ -75,7 +75,10 @@ export default function App() {
   const handleClick = (item) => {
     switch (item) {
       case "github":
-        let win = window.open("https://github.com/arthurzop", "_blank");
+        let win = window.open(
+          "https://github.com/arthurzop/Portfolio95",
+          "_blank"
+        );
         win.focus();
 
       case "notion":
@@ -316,7 +319,7 @@ export default function App() {
                           }}
                         >
                           <img className="icon" src={Dark_Agent} alt="" />
-                          <h1>meu github</h1>
+                          <h1>repositorio github</h1>
                         </R.MenuListItem>
                         <R.Divider />
                         <R.MenuListItem
