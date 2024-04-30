@@ -1,4 +1,4 @@
----
+
 
 ## Descrição:
 
@@ -6,7 +6,7 @@ Este é meu portfólio pessoal, desenvolvido com React e a biblioteca React95, q
 
 Projeto com o intuito de demonstrar minhas habilidades técnicas, meu conhecimento e meu olhar para o Web Design, permitindo que me conheçam, me contatem e vejam meus trabalhos — utilizando do site.
 
----
+
 
 ## Funcionalidades:
 
@@ -17,7 +17,7 @@ Projeto com o intuito de demonstrar minhas habilidades técnicas, meu conhecimen
 - Acesso a minhas redes sociais (Github e Linkedin)
 - Acesso ao código do repositório e a essa documentação;
 
----
+
 
 ## Créditos
 
@@ -25,7 +25,7 @@ Icones Utilizados:
 
 [Windows 95 ALL ICONS by Vovan29 on DeviantArt](https://www.deviantart.com/vovan29/art/Windows-95-ALL-ICONS-805656804)
 
----
+
 
 ## Bibliotecas Usadas
 
@@ -33,7 +33,7 @@ Icones Utilizados:
 - React95: Uma biblioteca de componentes React que fornece uma interface de usuário elegante inspirada no Windows 95
 - Styled-Components: Biblioteca para estilização global e permite mudança de temas.
 
----
+
 
 ## Autor
 
