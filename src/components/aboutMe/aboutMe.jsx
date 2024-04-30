@@ -27,6 +27,7 @@ export default function AboutMe({ logic, handle }) {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
+            minWidth: '180px'
           }}
         >
           sobre_mim.exe
@@ -71,8 +72,8 @@ export default function AboutMe({ logic, handle }) {
               </S.GroupBox>
             )}
             {activeTab === 1 && (
-              <R.GroupBox label="progredindo...">
-                <R.ScrollView>
+              <S.GroupBox label="progredindo...">
+                
                 <div className="currently-text">
                   <h2>estudando:</h2>
                   <ul>
@@ -109,12 +110,11 @@ export default function AboutMe({ logic, handle }) {
                     </li>
                   </ul>
                 </div>
-                </R.ScrollView>
-              </R.GroupBox>
+               
+              </S.GroupBox>
             )}
             {activeTab === 2 && (
               <R.GroupBox label="minhas habilidades >:)">
-                <R.ScrollView style={{ height: 400 }}>
                   <div className="currently-text">
                     <h2>linguagens & frameworks:</h2>
                     <ul>
@@ -139,7 +139,6 @@ export default function AboutMe({ logic, handle }) {
                       <li>kanbam</li>
                     </ul>
                   </div>
-                </R.ScrollView>
               </R.GroupBox>
             )}
           </R.TabBody>

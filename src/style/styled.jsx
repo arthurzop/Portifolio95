@@ -7,6 +7,8 @@ export const StyledWindow = styled(R.Window)`
     height: 'fit-content';
     user-select: "text";
     z-index: 3;
+    position: absolute;
+
 `
 
 export const GroupBox = styled(R.GroupBox)`
@@ -14,11 +16,14 @@ export const GroupBox = styled(R.GroupBox)`
     flex-direction: row;
     gap: 20px;
     width: fit-content;
+    align-items: center;
+
 `
 
 export const Tab = styled(R.Tab)`
     cursor: pointer;
     width: fit-content;
     height: fit-content;
-    text-wrap: nowrap;
+
+
 `
