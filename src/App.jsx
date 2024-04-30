@@ -75,7 +75,7 @@ export default function App() {
     switch (item) {
       case "github":
         let win = window.open(
-          "https://github.com/arthurzop/Portfolio95",
+          "https://github.com/arthurzop/Portifolio95",
           "_blank"
         );
         win.focus();
