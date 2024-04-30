@@ -37,13 +37,7 @@ export default function CurriculoApp({ logic, handle }) {
             }}
           >
             meu_curriculo.exe
-            <R.Button
-              onClick={() => {
-                logic;
-              }}
-            >
-              X
-            </R.Button>
+            <R.Button onClick={logic}>X</R.Button>
           </R.WindowHeader>
         </div>
         <R.WindowContent>
@@ -62,7 +56,13 @@ export default function CurriculoApp({ logic, handle }) {
             </h1>
             <div className="button-container">
               <R.Button
-                style={{ width: 140, height: 50, display: "flex", alignItems: "center", fontSize: '24px' }}
+                style={{
+                  width: 140,
+                  height: 50,
+                  display: "flex",
+                  alignItems: "center",
+                  fontSize: "24px",
+                }}
                 onClick={() => {
                   handleClick("online");
                 }}
@@ -70,7 +70,13 @@ export default function CurriculoApp({ logic, handle }) {
                 ver online ↥
               </R.Button>
               <R.Button
-                style={{ width: 140, height: 50, display: "flex", alignItems: "center", fontSize: '24px' }}
+                style={{
+                  width: 140,
+                  height: 50,
+                  display: "flex",
+                  alignItems: "center",
+                  fontSize: "24px",
+                }}
                 onClick={() => {
                   handleClick("baixar");
                 }}
