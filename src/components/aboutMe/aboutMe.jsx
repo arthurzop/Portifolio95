@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./aboutMe.css";
 import * as R from "react95";
+import * as S from '../../style/styled.jsx'
 
 //images
 import Eu from "../../assets/Eu.png";
@@ -19,15 +20,7 @@ export default function AboutMe({ logic, handle }) {
 
   return (
     <>
-      <R.Window
-        style={{
-          position: "absolute",
-          width: 'fit-content',
-          height: "fit-content",
-          userSelect: "text",
-          zIndex: 3,
-        }}
-      >
+      <S.StyledWindow>
         <div className={`${handle}`}>
         <R.WindowHeader
           style={{
@@ -42,49 +35,27 @@ export default function AboutMe({ logic, handle }) {
         </div>
         <R.WindowContent>
           <R.Tabs value={activeTab} onChange={handleChange}>
-            <R.Tab
+            <S.Tab
               value={0}
-              style={{
-                cursor: "pointer",
-                paddingInline: 15,
-                marginInline: 2,
-                textWrap: "nowrap",
-              }}
             >
               visao geral
-            </R.Tab>
-            <R.Tab
+            </S.Tab>
+            <S.Tab
               value={1}
-              style={{
-                cursor: "pointer",
-                paddingInline: 15,
-                marginInline: 2,
-                textWrap: "nowrap",
-              }}
             >
               em progresso
-            </R.Tab>
-            <R.Tab
+            </S.Tab>
+            <S.Tab
               value={2}
-              style={{
-                cursor: "pointer",
-                paddingInline: 15,
-                marginInline: 2,
-                textWrap: "nowrap",
-              }}
             >
-              habilidades
-            </R.Tab>
+              minhas habilidades
+            </S.Tab>
           </R.Tabs>
           <R.TabBody>
             {activeTab === 0 && (
-              <R.GroupBox
+              <S.GroupBox
                 label="sobre mim"
-                style={{
-                  display: "flex",
-                  gap: 20,
-                  width: "fit-content",
-                }}
+                
               >
                 <img src={Eu} className="about-image" />
                 <div className="about-text">
@@ -97,7 +68,7 @@ export default function AboutMe({ logic, handle }) {
                   </h2>
                   <h3>welcome to my portfolio!!</h3>
                 </div>
-              </R.GroupBox>
+              </S.GroupBox>
             )}
             {activeTab === 1 && (
               <R.GroupBox label="progredindo...">
@@ -173,7 +144,7 @@ export default function AboutMe({ logic, handle }) {
             )}
           </R.TabBody>
         </R.WindowContent>
-      </R.Window>
+      </S.StyledWindow>
     </>
   );
 }
