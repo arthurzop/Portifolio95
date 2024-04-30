@@ -1,5 +1,4 @@
 import React from "react";
-import * as R from 'react95';
 import './appIcon.css'
 
 

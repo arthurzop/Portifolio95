@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import * as R from "react95";
 import * as T from "react95/dist/themes"; //temas do react95
-// import theme from 'react95/dist/themes/original'
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import Draggable from "react-draggable";
 
