@@ -13,7 +13,6 @@ export default function Contact({ logic, handle }) {
   const [nome, setNome] = useState("");
   const [mensagem, setMensagem] = useState("");
 
-  const [open, isOpen] = useState(true);
 
   const form = useRef();
 
@@ -127,6 +126,7 @@ export default function Contact({ logic, handle }) {
           <R.TabBody>
             {activeTab === 0 && (
               <R.GroupBox label="Contact App">
+              
                 <form onSubmit={sendEmail} ref={form}>
                   <h1>
                     sinta-se livre pra me mandar perguntas ou qualquer coisa em
@@ -134,7 +134,7 @@ export default function Contact({ logic, handle }) {
                   </h1>
 
                   <>
-                    <label htmlFor="">seu nome:</label>
+                    <label className="label" htmlFor="">seu nome:</label>
                     <R.TextInput
                       type="text"
                       name="from_name"
@@ -146,7 +146,7 @@ export default function Contact({ logic, handle }) {
                     />
                   </>
                   <>
-                    <label>seu email:</label>
+                    <label className="label">seu email:</label>
                     <R.TextInput
                       type="email"
                       name="email"
@@ -158,13 +158,12 @@ export default function Contact({ logic, handle }) {
                     />
                   </>
                   <>
-                    <label>mensagens/perguntas</label>
                     <R.TextInput
                       multiline
-                      rows={6}
+                      rows={10}
                       type="text"
                       name="message"
-                      placeholder="fale sobre voce tambem!"
+                      placeholder="oie artur..."
                       value={mensagem}
                       onChange={(e) => {
                         setMensagem(e.target.value);
@@ -185,6 +184,7 @@ export default function Contact({ logic, handle }) {
                   </R.Button>
                 </form>
               </R.GroupBox>
+
             )}
             {activeTab === 1 && (
               <R.GroupBox>

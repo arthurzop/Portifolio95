@@ -1,7 +1,7 @@
 form {
   display: flex;
   flex-direction: column;
-  gap: 2vh;
+  gap: 1vh;
 }
 
 input {
@@ -12,14 +12,15 @@ input {
   font-weight: bold;
 }
 
-label{
- margin-inline-start: 2vw;
+.label{
+ font-weight: bold;
+ font-size: 1.1em;
 }
 
 form h1{
     font-weight: bold;
     text-align: center;
-    margin-top: 2vh;
+    margin: 2vh 0;
     font-size: 1.6em;
 }
 
