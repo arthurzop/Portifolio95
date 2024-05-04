@@ -5,6 +5,7 @@ import * as T from "react95/dist/themes"; //temas do react95
 // import theme from 'react95/dist/themes/original'
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import Draggable from "react-draggable";
+import { Analytics } from "@vercel/analytics/react";
 
 //imagens
 import Windows from "./assets/windows_logo.ico";
@@ -131,6 +132,7 @@ export default function App() {
     <>
       {off && <OffScreen />}
       <body>
+        <Analytics />
         <GlobalStyles />
         <ThemeProvider theme={choosenTheme}>
           <div className="apps-container">
