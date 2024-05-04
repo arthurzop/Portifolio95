@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import * as R from "react95";
 import * as T from "react95/dist/themes"; //temas do react95
-// import theme from 'react95/dist/themes/original'
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import Draggable from "react-draggable";
 import { Analytics } from "@vercel/analytics/react";
@@ -77,7 +76,7 @@ export default function App() {
     switch (item) {
       case "github":
         let win = window.open(
-          "https://github.com/arthurzop/Portfolio95",
+          "https://github.com/arthurzop/Portifolio95",
           "_blank"
         );
         win.focus();
@@ -218,7 +217,6 @@ export default function App() {
                 handle=".handle" //coloca na classe que pode ser arrastada
                 grid={[1, 1]} //a fluidez do drag (1 é o normal, fluido)
                 scale={1} //quanta 'força' precisa pra arrastar (1 é o normal, fluido)
-                defaultPosition={{ x: 500, y: 20 }}
               >
                 <div className="">
                   <AboutMe
