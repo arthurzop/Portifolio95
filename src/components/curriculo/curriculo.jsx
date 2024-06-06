@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./curriculo.css";
 import * as R from "react95";
-import pdf from "../../assets/pdf/Curriculo Artur Medeiros.pdf";
+import pdf from "../../assets/pdf/Curriculum_Artur.pdf";
 
 export default function CurriculoApp({ logic, handle }) {
   const handleClick = (op) => {
