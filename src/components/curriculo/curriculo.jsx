@@ -10,7 +10,7 @@ export default function CurriculoApp({ logic, handle }) {
     } else if (op == "baixar") {
       const link = document.createElement("a");
       link.href = pdf;
-      link.download = "CV_Artur_Medeiros.pdf";
+      link.download = "curriculo_artur_medeiros.pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
