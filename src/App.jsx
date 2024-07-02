@@ -197,7 +197,7 @@ export default function App() {
             )}
             {contact && (
               <Draggable
-                axis="both"
+                axis="both" 
                 handle=".handle"
                 position={null}
                 grid={[1, 1]}
