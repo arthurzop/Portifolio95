@@ -182,6 +182,8 @@ export default function App() {
                 grid={[1, 1]}
                 scale={1}
                 allowAnyClick
+                defaultPosition={{ x: 700, y: 100 }}
+
               >
                 <div className="">
                   <Projects
@@ -217,6 +219,8 @@ export default function App() {
                 handle=".handle" //coloca na classe que pode ser arrastada
                 grid={[1, 1]} //a fluidez do drag (1 é o normal, fluido)
                 scale={1} //quanta 'força' precisa pra arrastar (1 é o normal, fluido)
+                defaultPosition={{ x: 450, y: 100 }}
+
               >
                 <div className="">
                   <AboutMe
