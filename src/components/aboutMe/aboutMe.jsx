@@ -22,17 +22,17 @@ export default function AboutMe({ logic, handle }) {
     <>
       <S.StyledWindow>
         <div className={`${handle}`}>
-        <R.WindowHeader
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            minWidth: '180px'
-          }}
-        >
-          sobre_mim.exe
-          <R.Button onClick={logic}>X</R.Button>
-        </R.WindowHeader>
+          <R.WindowHeader
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              minWidth: '180px'
+            }}
+          >
+            sobre_mim.exe
+            <R.Button onClick={logic}>X</R.Button>
+          </R.WindowHeader>
         </div>
         <R.WindowContent>
           <R.Tabs value={activeTab} onChange={handleChange}>
@@ -56,7 +56,7 @@ export default function AboutMe({ logic, handle }) {
             {activeTab === 0 && (
               <S.GroupBox
                 label="sobre mim"
-                
+
               >
                 <img src={Eu} className="about-image" />
                 <div className="about-text">
@@ -64,7 +64,7 @@ export default function AboutMe({ logic, handle }) {
                   <p>são paulo, brasil</p>
                   <R.Divider />
                   <h2>
-                    tenho 20 anos, estudante do senai sao paulo.
+                    tenho 20 anos, estudante da cruzeiro do sul.
                     focado em front-end & web design
                   </h2>
                   <h3>welcome to my portfolio!!</h3>
@@ -73,12 +73,12 @@ export default function AboutMe({ logic, handle }) {
             )}
             {activeTab === 1 && (
               <S.GroupBox label="progredindo...">
-                
+
                 <div className="currently-text">
                   <h2>estudando:</h2>
                   <ul>
                     <li>react</li>
-                    <li>php</li>
+                    <li>next js</li>
                     <li>web design</li>
                     <li>interface ui/ux</li>
                   </ul>
@@ -97,48 +97,39 @@ export default function AboutMe({ logic, handle }) {
                         </R.Anchor>
                       </li>
                     </li>
-                    <li>
-                      aplicacoes mobile (em react native)
-                      <li>
-                        <R.Anchor
-                          href="https://github.com/arthurzop/calcChurras-native.git"
-                          target="_blank"
-                        >
-                          repositorio no github
-                        </R.Anchor>
-                      </li>
-                    </li>
+
                   </ul>
                 </div>
-               
+
               </S.GroupBox>
             )}
             {activeTab === 2 && (
               <R.GroupBox label="minhas habilidades >:)">
-                  <div className="currently-text">
-                    <h2>linguagens & frameworks:</h2>
-                    <ul>
-                      <li>javascript</li>
-                      <li>react.js</li>
-                      <li>react native</li>
-                      <li>styled components</li>
-                      <li>html / css</li>
-                      <li>bootstrap</li>
-                    </ul>
-                    <R.Divider />
-                    <h2>tecnologias:</h2>
-                    <ul>
-                      <li>git / github</li>
-                      <li>figma</li>
-                      <li>notion</li>
-                    </ul>
-                    <R.Divider />
-                    <h2>metodologias ageis:</h2>
-                    <ul>
-                      <li>scrum</li>
-                      <li>kanbam</li>
-                    </ul>
-                  </div>
+                <div className="currently-text">
+                  <h2>linguagens & frameworks:</h2>
+                  <ul>
+                    <li>javascript</li>
+                    <li>react.js</li>
+                    <li>next.js</li>
+                    <li>react native</li>
+                    <li>styled components</li>
+                    <li>html / css</li>
+                    <li>bootstrap</li>
+                  </ul>
+                  <R.Divider />
+                  <h2>tecnologias:</h2>
+                  <ul>
+                    <li>git / github</li>
+                    <li>figma</li>
+                    <li>notion</li>
+                  </ul>
+                  <R.Divider />
+                  <h2>metodologias ageis:</h2>
+                  <ul>
+                    <li>scrum</li>
+                    <li>kanbam</li>
+                  </ul>
+                </div>
               </R.GroupBox>
             )}
           </R.TabBody>
