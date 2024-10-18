@@ -53,7 +53,9 @@ export default function AboutMe({ logic, handle }) {
                     sistemas na cruzeiro do sul. <br />
                     Focado em web design & front-end
                   </h2>
-                  <h3>welcome to my portfolio!!</h3>
+                  <div class="waviy">
+                    <h3>Welcome to my portfolio</h3>
+                  </div>
                 </div>
               </S.GroupBox>
             )}
@@ -75,7 +77,7 @@ export default function AboutMe({ logic, handle }) {
                   <ul>
                     <li>Git / Github</li>
                     <li>Figma</li>
-                    <li>notion</li>
+                    <li>Notion</li>
                   </ul>
                   <R.Divider />
                   <h2>Metodologias ageis:</h2>
@@ -106,7 +108,9 @@ export default function AboutMe({ logic, handle }) {
                     <li>UI / UX</li>
                   </ul>
                   <R.Divider />
-                  <h2>Projetos como Web Designer <br />& Front-End:</h2>
+                  <h2>
+                    Projetos como Web Designer <br />& Front-End:
+                  </h2>
                   <ul>
                     <li>Suporte de Domingo</li>
                     <li>Data Mastery</li>

@@ -96,6 +96,8 @@ export default function Projects({ logic, handle }) {
                 label="visao geral"
                 style={{
                   display: "flex",
+                  alignContent: "center",
+                  justifyContent: "center",
                   gap: 20,
                 }}
               >

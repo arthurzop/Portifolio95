@@ -53,15 +53,27 @@
         indigo, 
         blue, 
         green, 
-        yellow, 
-        orange, 
+        rgb(204, 204, 3), 
+        rgb(214, 139, 0), 
         red
     );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.jim {
-  width: 50px;
-  resize: both;
+.waviy {
+  position: relative;
+}
+.waviy h3 {
+  position: relative;
+  animation: waviy 1s infinite;
+  
+}
+@keyframes waviy {
+  0%,40%,100% {
+    transform: translateY(0)
+  }
+  20% {
+    transform: translateY(-20px)
+  }
 }

@@ -52,7 +52,7 @@ export default function CurriculoApp({ logic, handle }) {
             }}
           >
             <h1 className="curriculo-text">
-              aqui voce pode ver <br /> (ou baixar :3) meu curriculo!!
+              Aqui voce pode ver <br /> (ou baixar :3) meu curriculo!!
             </h1>
             <div className="button-container">
               <R.Button
