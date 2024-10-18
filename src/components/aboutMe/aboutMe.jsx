@@ -42,7 +42,7 @@ export default function AboutMe({ logic, handle }) {
           </R.Tabs>
           <R.TabBody>
             {activeTab === 0 && (
-              <S.GroupBox label="Quem sou">
+              <S.GroupBox label="Sobre mim :P">
                 <img src={Eu} className="about-image" />
                 <div className="about-text">
                   <h1>Artur Medeiros</h1>
