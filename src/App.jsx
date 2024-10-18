@@ -59,7 +59,7 @@ export default function App() {
   let [contact, setContact] = useState(false); //abrir/fechar app contact
   let [themePicker, setThemePicker] = useState(false); //abrir/fechar app contact
   let [off, setOff] = useState(false); //abrir pagina de saida
-  let [isLoading, setIsLoading] = useState(false); //loading pra splash screen
+  let [isLoading, setIsLoading] = useState(true); //loading pra splash screen
   let [curriculo, setCurriculo] = useState(false);
 
   useEffect(() => {
@@ -183,7 +183,6 @@ export default function App() {
                 scale={1}
                 allowAnyClick
                 defaultPosition={{ x: 700, y: 100 }}
-
               >
                 <div className="">
                   <Projects
@@ -197,7 +196,7 @@ export default function App() {
             )}
             {contact && (
               <Draggable
-                axis="both" 
+                axis="both"
                 handle=".handle"
                 position={null}
                 grid={[1, 1]}
@@ -220,7 +219,6 @@ export default function App() {
                 grid={[1, 1]} //a fluidez do drag (1 é o normal, fluido)
                 scale={1} //quanta 'força' precisa pra arrastar (1 é o normal, fluido)
                 defaultPosition={{ x: 450, y: 50 }}
-
               >
                 <div className="">
                   <AboutMe
