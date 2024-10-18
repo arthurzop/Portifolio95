@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./aboutMe.css";
 import * as R from "react95";
-import * as S from '../../style/styled.jsx'
+import * as S from "../../style/styled.jsx";
 
 //images
-import Eu from "../../assets/Eu.png";
+import Eu from "../../assets/Eu.jpg";
 
 export default function AboutMe({ logic, handle }) {
   const [state, setState] = useState({
@@ -27,7 +27,7 @@ export default function AboutMe({ logic, handle }) {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              minWidth: '180px'
+              minWidth: "180px",
             }}
           >
             sobre_mim.exe
@@ -36,101 +36,84 @@ export default function AboutMe({ logic, handle }) {
         </div>
         <R.WindowContent>
           <R.Tabs value={activeTab} onChange={handleChange}>
-            <S.Tab
-              value={0}
-            >
-              visao geral
-            </S.Tab>
-            <S.Tab
-              value={1}
-            >
-              em progresso
-            </S.Tab>
-            <S.Tab
-              value={2}
-            >
-              minhas habilidades
-            </S.Tab>
+            <S.Tab value={0}>Visao geral</S.Tab>
+            <S.Tab value={1}>Minhas habilidades</S.Tab>
+            <S.Tab value={2}>Em progresso</S.Tab>
           </R.Tabs>
           <R.TabBody>
             {activeTab === 0 && (
-              <S.GroupBox
-                label="sobre mim"
-
-              >
+              <S.GroupBox label="Quem sou">
                 <img src={Eu} className="about-image" />
                 <div className="about-text">
-                  <h1>artur medeiros</h1>
-                  <p>são paulo, brasil</p>
+                  <h1>Artur Medeiros</h1>
+                  <p>São Paulo, Brasil</p>
                   <R.Divider />
                   <h2>
-                    tenho 20 anos, estudante da cruzeiro do sul.
-                    focado em front-end & web design
+                    Tenho 21 anos, estudante de analise e desenvolvimento de
+                    sistemas na cruzeiro do sul. <br />
+                    Focado em web design & front-end
                   </h2>
                   <h3>welcome to my portfolio!!</h3>
                 </div>
               </S.GroupBox>
             )}
             {activeTab === 1 && (
-              <S.GroupBox label="progredindo...">
-
+              <R.GroupBox label="O que sei >:)">
                 <div className="currently-text">
-                  <h2>estudando:</h2>
+                  <h2>Linguagens & Frameworks:</h2>
                   <ul>
-                    <li>react</li>
-                    <li>next js</li>
-                    <li>web design</li>
-                    <li>interface ui/ux</li>
-                  </ul>
-                  <R.Divider />
-                  <h2>projetos:</h2>
-                  <ul>
-                    <li>portfolio pessoal</li>
-                    <li>
-                      trabalho de conclusao de curso (tcc)
-                      <li>
-                        <R.Anchor
-                          href="https://github.com/arthurzop/tcc-front.git"
-                          target="_blank"
-                        >
-                          repositorio no github
-                        </R.Anchor>
-                      </li>
-                    </li>
-
-                  </ul>
-                </div>
-
-              </S.GroupBox>
-            )}
-            {activeTab === 2 && (
-              <R.GroupBox label="minhas habilidades >:)">
-                <div className="currently-text">
-                  <h2>linguagens & frameworks:</h2>
-                  <ul>
-                    <li>javascript</li>
-                    <li>react.js</li>
-                    <li>next.js</li>
-                    <li>react native</li>
-                    <li>styled components</li>
+                    <li>Javascript</li>
+                    <li>React.js</li>
+                    <li>Next.js</li>
+                    <li>React native</li>
+                    <li>Styled components</li>
                     <li>html / css</li>
-                    <li>bootstrap</li>
+                    <li>Bootstrap</li>
                   </ul>
                   <R.Divider />
-                  <h2>tecnologias:</h2>
+                  <h2>Tecnologias & Softwares:</h2>
                   <ul>
-                    <li>git / github</li>
-                    <li>figma</li>
+                    <li>Git / Github</li>
+                    <li>Figma</li>
                     <li>notion</li>
                   </ul>
                   <R.Divider />
-                  <h2>metodologias ageis:</h2>
+                  <h2>Metodologias ageis:</h2>
                   <ul>
-                    <li>scrum</li>
-                    <li>kanbam</li>
+                    <li>Scrum</li>
+                    <li>Kanbam</li>
                   </ul>
                 </div>
               </R.GroupBox>
+            )}
+            {activeTab === 2 && (
+              <S.GroupBox label="Progredindo...">
+                <div className="currently-text">
+                  <h2>Estudando:</h2>
+                  <ul>
+                    <li>Motion Design</li>
+                    <li>Social Media Design</li>
+                    <li>Branding</li>
+                    <li>Illustrator</li>
+                  </ul>
+                  <h2>
+                    & <br />
+                    Masterizando:
+                  </h2>
+                  <ul>
+                    <li>Figma</li>
+                    <li>Web Design</li>
+                    <li>UI / UX</li>
+                  </ul>
+                  <R.Divider />
+                  <h2>Projetos como Web Designer <br />& Front-End:</h2>
+                  <ul>
+                    <li>Suporte de Domingo</li>
+                    <li>Data Mastery</li>
+                    <li>Zone</li>
+                  </ul>
+                </div>
+              </S.GroupBox>
             )}
           </R.TabBody>
         </R.WindowContent>

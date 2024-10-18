@@ -1,6 +1,5 @@
 .about-image {
-  width: 300px;
-  max-height: 300px;
+  max-width: 400px;
   border: double 3px;
 }
 
@@ -24,9 +23,9 @@
 }
 
 .about-text h2 {
-  max-width: 220px;
+  max-width: 320px;
   align-self: center;
-  text-align: justify;
+  text-align: left;
   font-size: 1.2em;
   font-weight: bold;
 }
