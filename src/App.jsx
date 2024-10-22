@@ -95,7 +95,7 @@ export default function App() {
         setTimeout(() => {
           window.close();
           setOff(false);
-        }, 3000);
+        }, 2500);
     }
   };
 
@@ -321,7 +321,7 @@ export default function App() {
                           }}
                         >
                           <img className="icon" src={Dark_Agent} alt="" />
-                          <h1>repositorio github</h1>
+                          <h1>Repositorio github</h1>
                         </R.MenuListItem>
                         <R.Divider />
                         <R.MenuListItem
@@ -335,7 +335,7 @@ export default function App() {
                           }}
                         >
                           <img className="icon" src={Book} alt="" />
-                          <h1>documentacao</h1>
+                          <h1>Documentacao</h1>
                         </R.MenuListItem>
                         <R.Divider />
                         <R.MenuListItem
@@ -349,7 +349,7 @@ export default function App() {
                           }}
                         >
                           <img src={Off} alt="" />
-                          <h1>sair</h1>
+                          <h1>Sair</h1>
                         </R.MenuListItem>
                       </div>
                     </R.MenuList>

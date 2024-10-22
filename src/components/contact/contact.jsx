@@ -109,7 +109,7 @@ export default function Contact({ logic, handle }) {
                 textWrap: "nowrap",
               }}
             >
-              enviar um email
+              Enviar um email
             </R.Tab>
             <R.Tab
               value={1}
@@ -120,7 +120,7 @@ export default function Contact({ logic, handle }) {
                 textWrap: "nowrap",
               }}
             >
-              redes sociais
+              Eedes sociais
             </R.Tab>
           </R.Tabs>
           <R.TabBody>
@@ -129,12 +129,12 @@ export default function Contact({ logic, handle }) {
               
                 <form onSubmit={sendEmail} ref={form}>
                   <h1>
-                    sinta-se livre pra me mandar perguntas ou qualquer coisa em
+                    Sinta-se livre pra me mandar perguntas ou qualquer coisa em
                     mente !
                   </h1>
 
                   <>
-                    <label className="label" htmlFor="">seu nome:</label>
+                    <label className="label" htmlFor="">Seu nome:</label>
                     <R.TextInput
                       type="text"
                       name="from_name"
@@ -146,7 +146,7 @@ export default function Contact({ logic, handle }) {
                     />
                   </>
                   <>
-                    <label className="label">seu email:</label>
+                    <label className="label">Seu email:</label>
                     <R.TextInput
                       type="email"
                       name="email"

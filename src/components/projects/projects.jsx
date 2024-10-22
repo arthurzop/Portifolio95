@@ -27,7 +27,7 @@ export default function Projects({ logic, handle }) {
       <R.Window
         style={{
           position: "absolute",
-          width: 850,
+          width: 860,
           height: "fit-content",
           userSelect: "text",
           zIndex: 3,
@@ -56,7 +56,7 @@ export default function Projects({ logic, handle }) {
                 textWrap: "nowrap",
               }}
             >
-              visao geral
+              Visao geral
             </R.Tab>
             <R.Tab
               value={1}
@@ -67,7 +67,7 @@ export default function Projects({ logic, handle }) {
                 textWrap: "nowrap",
               }}
             >
-              meu tcc
+              TCC SENAI
             </R.Tab>
             <R.Tab
               value={2}
@@ -78,7 +78,7 @@ export default function Projects({ logic, handle }) {
                 textWrap: "nowrap",
               }}
             >
-              landing page sos
+              Landing page SOS
             </R.Tab>
             <R.Tab
               value={3}
@@ -89,7 +89,7 @@ export default function Projects({ logic, handle }) {
                 textWrap: "nowrap",
               }}
             >
-              suporte de domingo
+              Suporte de Domingo
             </R.Tab>
             <R.Tab
               value={4}
@@ -100,7 +100,7 @@ export default function Projects({ logic, handle }) {
                 textWrap: "nowrap",
               }}
             >
-              data mastery
+              Data Mastery
             </R.Tab>
             <R.Tab
               value={5}
@@ -111,7 +111,7 @@ export default function Projects({ logic, handle }) {
                 textWrap: "nowrap",
               }}
             >
-              esse portfolio!
+              Esse portfolio!
             </R.Tab>
           </R.Tabs>
           <R.TabBody>
@@ -126,17 +126,17 @@ export default function Projects({ logic, handle }) {
                 }}
               >
                 <div className="text-container">
-                  <h1>bem vindo aos meus projetos!</h1>
+                  <h1>Bem vindo aos meus projetos!</h1>
                   <R.Divider />
                   <h2>
-                    nessa sessao vc vai poder ver algum dos meus projetos,{" "}
-                    <br /> mas apenas os destaques :v
+                    Nessa sessao vc vai poder ver algum dos meus projetos, mas
+                    apenas os destaques. :v
                     <br />
-                    voce pode ver mais no meu {""}
+                    Voce pode ver mais no meu {""}
                     <R.Anchor href="https://github.com/arthurzop">
                       github
                     </R.Anchor>{" "}
-                    ou entrar em contato, se quiser!
+                    ,ou entrar em contato, se quiser!
                   </h2>
                   <img src={comic} alt="" className="comic" />
                 </div>
@@ -156,11 +156,11 @@ export default function Projects({ logic, handle }) {
                     <img src={project2} alt="" className="project-image" />
                   </div>
                   <div className="text-container">
-                    <h1>espaco maker 3d</h1>
+                    <h1>Espaco Maker 3D</h1>
                     <R.Divider />
                     <h2>
-                      esse e o projeto final do senai, para conclusao do curso.
-                      ele e um sistema que permite os estudantes agendem e
+                      Esse e o projeto final do senai, para conclusao do curso.
+                      Ele e um sistema que permite os estudantes agendem e
                       imprimam usando as impressoras 3d da escola.
                     </h2>
                     <h2>
@@ -196,12 +196,12 @@ export default function Projects({ logic, handle }) {
                     <img src={project4} alt="" className="project-image" />
                   </div>
                   <div className="text-container">
-                    <h1>sos - landing page</h1>
+                    <h1>SOS - Landing page</h1>
                     <R.Divider />
                     <h2>
-                      esse projeto e focado 100% no design, fiz para minhas
+                      Ja esse projeto e focado 100% no design, fiz para minhas
                       aulas de web design. é uma landing page baseada no album
-                      sos, da sza. nesse aqui deixei minha imaginacao correr
+                      sos, da sza. Nesse daqui deixei minha imaginacao correr
                       livre para criar mais uma 'arte' do que um site.
                     </h2>
                     <h2>
@@ -274,11 +274,16 @@ export default function Projects({ logic, handle }) {
               >
                 <div className="text-container">
                   <h1>Data Mastery</h1>
-                  <R.Divider/>
+                  <R.Divider />
                   <h2>
-                      Também para um ex-professor do SENAI, estou tendo a oportunidade de participar como web designer na craição da landing page e outras páginas em conjunto para sua empresa de ciencia de dados e power BI.
-                      <br />
-                      Nesse projeto e na Suporte de Domingo estou exclusivamente na área do web design, sendo assim nao estou codando o front-end. 
+                    Também para um ex-professor do SENAI, estou tendo a
+                    oportunidade de participar como web designer na craição da
+                    landing page e outras páginas em conjunto para sua empresa
+                    de ciencia de dados e power BI.
+                    <br />
+                    Nesse projeto e na Suporte de Domingo estou exclusivamente
+                    na área do web design, sendo assim nao estou codando o
+                    front-end.
                   </h2>
                 </div>
               </R.GroupBox>
@@ -286,18 +291,18 @@ export default function Projects({ logic, handle }) {
             {activeTab === 5 && (
               <R.GroupBox>
                 <div className="text-container">
-                  <h1>esse portfolio por si so!!</h1>
+                  <h1>Esse portfolio por si so!!</h1>
                   <R.Divider />
                   <h2>
-                    eu to muito muito orgulhoso desse aqui. eu ja conhecia a lib
-                    react95 faz uns meses mas nunca tive a oportunidade de usar
-                    ela, ate chegar na ideia de usar ela para criar meu proprio
-                    portfolio pessoal :) e eu, sendo eu, coloquei meu maximo
-                    nesse projeto aqui.
+                    Eu to muito muito orgulhoso desse aqui. Eu ja conhecia a lib
+                    react95 fazia alguns meses mas nunca tive a oportunidade de
+                    usar ela, ate chegar na ideia de usar ela para criar meu
+                    proprio portfolio pessoal :) e eu, sendo eu, coloquei meu
+                    maximo nesse projeto aqui.
                     <br />
                     <br />
-                    eu amo essa estetica de internet antiga e computadores
-                    antigos! entao poder usar para expressar meu trabalho, meus
+                    Eu amo essa estetica de internet antiga e computadores
+                    antigos! Entao poder usar para expressar meu trabalho, meus
                     gostos e minha estetica é bem recompensador!
                   </h2>
                 </div>
