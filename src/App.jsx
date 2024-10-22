@@ -59,7 +59,7 @@ export default function App() {
   let [contact, setContact] = useState(false); //abrir/fechar app contact
   let [themePicker, setThemePicker] = useState(false); //abrir/fechar app contact
   let [off, setOff] = useState(false); //abrir pagina de saida
-  let [isLoading, setIsLoading] = useState(false); //loading pra splash screen
+  let [isLoading, setIsLoading] = useState(true); //loading pra splash screen
   let [curriculo, setCurriculo] = useState(false);
 
   useEffect(() => {
@@ -290,7 +290,11 @@ export default function App() {
                     onClick={() => setOpen(!open)}
                     active={open} //se tiver true, fica active (afundado)
                   >
-                    <img className="icon" src={Windows} alt="icone windows 95 menu"/>
+                    <img
+                      className="icon"
+                      src={Windows}
+                      alt="icone windows 95 menu"
+                    />
                     menu
                   </R.Button>
                   {open && (
@@ -380,7 +384,11 @@ export default function App() {
                         fontWeight: "bold",
                       }}
                     >
-                      <img src={About} className="icon" alt="icone windows 95 lupa com cd"/>
+                      <img
+                        src={About}
+                        className="icon"
+                        alt="icone windows 95 lupa com cd"
+                      />
                       sobre mim
                     </R.Button>
                   )}
@@ -397,7 +405,11 @@ export default function App() {
                         fontWeight: "bold",
                       }}
                     >
-                      <img src={Folder} className="icon" alt="icone windows 95 pasta de arquivos"/>
+                      <img
+                        src={Folder}
+                        className="icon"
+                        alt="icone windows 95 pasta de arquivos"
+                      />
                       meus projetos
                     </R.Button>
                   )}
@@ -414,7 +426,11 @@ export default function App() {
                         fontWeight: "bold",
                       }}
                     >
-                      <img src={Telephone} className="icon" alt="icone windows 95 telefone"/>
+                      <img
+                        src={Telephone}
+                        className="icon"
+                        alt="icone windows 95 telefone"
+                      />
                       contato
                     </R.Button>
                   )}
@@ -431,7 +447,11 @@ export default function App() {
                         fontWeight: "bold",
                       }}
                     >
-                      <img src={Palette} className="icon" alt="icone windows 95 paleta de cores"/>
+                      <img
+                        src={Palette}
+                        className="icon"
+                        alt="icone windows 95 paleta de cores"
+                      />
                       temas
                     </R.Button>
                   )}
@@ -448,7 +468,11 @@ export default function App() {
                         fontWeight: "bold",
                       }}
                     >
-                      <img src={Form} className="icon" alt="icone windows 95 lapis no papel"/>
+                      <img
+                        src={Form}
+                        className="icon"
+                        alt="icone windows 95 lapis no papel"
+                      />
                       curriculo
                     </R.Button>
                   )}
