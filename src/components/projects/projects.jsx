@@ -7,6 +7,8 @@ import project1 from "../../assets/project1.png";
 import project2 from "../../assets/project2.png";
 import project3 from "../../assets/project3.png";
 import project4 from "../../assets/project4.png";
+import project5 from "../../assets/project5.png";
+import project6 from "../../assets/project6.png";
 import comic from "../../assets/comic.gif";
 
 export default function Projects({ logic, handle }) {
@@ -25,10 +27,10 @@ export default function Projects({ logic, handle }) {
       <R.Window
         style={{
           position: "absolute",
-          width: 650,
+          width: 850,
           height: "fit-content",
           userSelect: "text",
-          zIndex: 2,
+          zIndex: 3,
         }}
       >
         <div className={`${handle}`}>
@@ -50,7 +52,7 @@ export default function Projects({ logic, handle }) {
               style={{
                 cursor: "pointer",
                 paddingInline: 15,
-                marginInline: 2,
+                marginInline: 1,
                 textWrap: "nowrap",
               }}
             >
@@ -61,7 +63,7 @@ export default function Projects({ logic, handle }) {
               style={{
                 cursor: "pointer",
                 paddingInline: 15,
-                marginInline: 2,
+                marginInline: 1,
                 textWrap: "nowrap",
               }}
             >
@@ -72,7 +74,7 @@ export default function Projects({ logic, handle }) {
               style={{
                 cursor: "pointer",
                 paddingInline: 15,
-                marginInline: 2,
+                marginInline: 1,
                 textWrap: "nowrap",
               }}
             >
@@ -84,6 +86,28 @@ export default function Projects({ logic, handle }) {
                 cursor: "pointer",
                 paddingInline: 15,
                 marginInline: 2,
+                textWrap: "nowrap",
+              }}
+            >
+              suporte de domingo
+            </R.Tab>
+            <R.Tab
+              value={4}
+              style={{
+                cursor: "pointer",
+                paddingInline: 15,
+                marginInline: 1,
+                textWrap: "nowrap",
+              }}
+            >
+              data mastery
+            </R.Tab>
+            <R.Tab
+              value={5}
+              style={{
+                cursor: "pointer",
+                paddingInline: 15,
+                marginInline: 1,
                 textWrap: "nowrap",
               }}
             >
@@ -200,6 +224,66 @@ export default function Projects({ logic, handle }) {
               </R.GroupBox>
             )}
             {activeTab === 3 && (
+              <R.GroupBox
+                label="work in progress..."
+                style={{
+                  display: "flex",
+                  gap: 20,
+                }}
+              >
+                <div className="project-container">
+                  <div className="image-container">
+                    <img src={project5} alt="" className="project-image" />
+                    <img src={project6} alt="" className="project-image" />
+                  </div>
+                  <div className="text-container">
+                    <h1>Suporte de Domingo</h1>
+                    <R.Divider />
+                    <h2>
+                      A suporte foi criada pelo meu ex-professor (e hoje chefe)
+                      com o intuito de criar uma forte comunidade de devs e
+                      designers. Eu criei o desing da marca suporte e todo o
+                      web-design das páginas.
+                    </h2>
+                    <h2>
+                      <R.Anchor
+                        href="https://suportededomingo.com.br"
+                        target="_blank"
+                      >
+                        website upado
+                      </R.Anchor>
+                      <br />
+                      <R.Anchor
+                        href="https://discord.gg/qB42JUJquU"
+                        target="_blank"
+                      >
+                        nossa comunidade no discord
+                      </R.Anchor>
+                    </h2>
+                  </div>
+                </div>
+              </R.GroupBox>
+            )}
+            {activeTab === 4 && (
+              <R.GroupBox
+                label="work in progress..."
+                style={{
+                  display: "flex",
+                  gap: 20,
+                }}
+              >
+                <div className="text-container">
+                  <h1>Data Mastery</h1>
+                  <R.Divider/>
+                  <h2>
+                      Também para um ex-professor do SENAI, estou tendo a oportunidade de participar como web designer na craição da landing page e outras páginas em conjunto para sua empresa de ciencia de dados e power BI.
+                      <br />
+                      Nesse projeto e na Suporte de Domingo estou exclusivamente na área do web design, sendo assim nao estou codando o front-end. 
+                  </h2>
+                </div>
+              </R.GroupBox>
+            )}
+            {activeTab === 5 && (
               <R.GroupBox>
                 <div className="text-container">
                   <h1>esse portfolio por si so!!</h1>
