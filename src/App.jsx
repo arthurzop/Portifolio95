@@ -30,6 +30,7 @@ import Contact from "./components/contact/contact";
 import SplashScreen from "./components/splashScreen/splashScreen";
 import ThemePicker from "./components/themePicker/themePicker";
 import CurriculoApp from "./components/curriculo/curriculo";
+import ViewCounter from "./components/viewCounter/viewCounter";
 
 // resetando os estilos globais e  adicionando a fonte personalizada
 const GlobalStyles = createGlobalStyle`
@@ -61,6 +62,7 @@ export default function App() {
   let [off, setOff] = useState(false); //abrir pagina de saida
   let [isLoading, setIsLoading] = useState(true); //loading pra splash screen
   let [curriculo, setCurriculo] = useState(false);
+  let [viewer, setViewer] = useState(true);
 
   useEffect(() => {
     setInterval(() => setTime(new Date()), 1000);
@@ -124,6 +126,8 @@ export default function App() {
   const childToParent = (childdata) => {
     setChoosenTheme(childdata);
   };
+
+  
 
   return isLoading ? (
     <SplashScreen />
@@ -264,6 +268,19 @@ export default function App() {
                     }}
                     handle="handle"
                   />
+                </div>
+              </Draggable>
+            )}
+            {viewer && (
+              <Draggable
+                axis="both"
+                handle=".handle" //coloca na classe que pode ser arrastada
+                grid={[1, 1]} //a fluidez do drag (1 é o normal, fluido)
+                scale={1} //quanta 'força' precisa pra arrastar (1 é o normal, fluido)
+                defaultPosition={{ x: 1250, y: -15 }}
+              >
+                <div className="">
+                  <ViewCounter handle="handle" />
                 </div>
               </Draggable>
             )}
