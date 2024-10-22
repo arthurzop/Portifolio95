@@ -290,7 +290,7 @@ export default function App() {
                     onClick={() => setOpen(!open)}
                     active={open} //se tiver true, fica active (afundado)
                   >
-                    <img className="icon" src={Windows} />
+                    <img className="icon" src={Windows} alt="icone windows 95 menu"/>
                     menu
                   </R.Button>
                   {open && (
@@ -320,7 +320,11 @@ export default function App() {
                             handleClick("github");
                           }}
                         >
-                          <img className="icon" src={Dark_Agent} alt="" />
+                          <img
+                            className="icon"
+                            src={Dark_Agent}
+                            alt="icone windows 95 agente"
+                          />
                           <h1>Repositorio github</h1>
                         </R.MenuListItem>
                         <R.Divider />
@@ -334,7 +338,11 @@ export default function App() {
                             handleClick("notion");
                           }}
                         >
-                          <img className="icon" src={Book} alt="" />
+                          <img
+                            className="icon"
+                            src={Book}
+                            alt="icone windows 95 livro"
+                          />
                           <h1>Documentacao</h1>
                         </R.MenuListItem>
                         <R.Divider />
@@ -348,7 +356,7 @@ export default function App() {
                             handleClick("exit");
                           }}
                         >
-                          <img src={Off} alt="" />
+                          <img src={Off} alt="icone windows 95 computador" />
                           <h1>Sair</h1>
                         </R.MenuListItem>
                       </div>
@@ -372,7 +380,7 @@ export default function App() {
                         fontWeight: "bold",
                       }}
                     >
-                      <img src={About} className="icon" />
+                      <img src={About} className="icon" alt="icone windows 95 lupa com cd"/>
                       sobre mim
                     </R.Button>
                   )}
@@ -389,7 +397,7 @@ export default function App() {
                         fontWeight: "bold",
                       }}
                     >
-                      <img src={Folder} className="icon" />
+                      <img src={Folder} className="icon" alt="icone windows 95 pasta de arquivos"/>
                       meus projetos
                     </R.Button>
                   )}
@@ -406,7 +414,7 @@ export default function App() {
                         fontWeight: "bold",
                       }}
                     >
-                      <img src={Telephone} className="icon" />
+                      <img src={Telephone} className="icon" alt="icone windows 95 telefone"/>
                       contato
                     </R.Button>
                   )}
@@ -423,7 +431,7 @@ export default function App() {
                         fontWeight: "bold",
                       }}
                     >
-                      <img src={Palette} className="icon" />
+                      <img src={Palette} className="icon" alt="icone windows 95 paleta de cores"/>
                       temas
                     </R.Button>
                   )}
@@ -440,7 +448,7 @@ export default function App() {
                         fontWeight: "bold",
                       }}
                     >
-                      <img src={Form} className="icon" />
+                      <img src={Form} className="icon" alt="icone windows 95 lapis no papel"/>
                       curriculo
                     </R.Button>
                   )}
