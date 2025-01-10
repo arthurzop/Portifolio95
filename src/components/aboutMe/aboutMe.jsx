@@ -49,8 +49,8 @@ export default function AboutMe({ logic, handle }) {
                   <p>São Paulo, Brasil</p>
                   <R.Divider />
                   <h2>
-                    Tenho 21 anos, estudante de analise e desenvolvimento de
-                    sistemas na cruzeiro do sul. <br />
+                    Tenho 21 anos, estudante de design gráfico
+                    na cruzeiro do sul. <br />
                     Focado em web design & front-end
                   </h2>
                   <div class="waviy">
