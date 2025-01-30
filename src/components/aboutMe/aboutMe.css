@@ -1,20 +1,21 @@
 .about-image {
-  max-width: 400px;
+  max-width: 300px;
   border: double 3px;
 }
 
-.about-text, .currently-text{
+.about-text,
+.currently-text {
   height: 100%;
   width: 200px;
   display: flex;
   flex-direction: column;
   padding: 2vh 0vw;
   gap: 10px;
+  width: 100%;
 }
 
-.currently-text{
+.currently-text {
   padding: 2vh 1vw;
-  width: 300px;
 }
 
 .about-text h1 {
@@ -30,33 +31,32 @@
   font-weight: bold;
 }
 
-.currently-text h2{
-    font-weight: bold;
-    text-wrap: nowrap;
+.currently-text h2 {
+  font-weight: bold;
+  text-wrap: nowrap;
 }
 
-.currently-text li{
-    list-style: square;
-    margin-inline-start: 2vw;
+.currently-text li {
+  list-style: square;
+  margin-inline-start: 2vw;
 }
-
 
 .about-text h3 {
-  font-size: 1em;
-  text-align: center;
+  font-size: 1.2em;
+  text-align: left;
+  letter-spacing: 3px;
   padding-top: 2vh;
   font-weight: bold;
-  background-image: 
-    linear-gradient(
-      to left, 
-        violet, 
-        indigo, 
-        blue, 
-        green, 
-        rgb(204, 204, 3), 
-        rgb(214, 139, 0), 
-        red
-    );
+  background-image: linear-gradient(
+    to left,
+    violet,
+    indigo,
+    blue,
+    rgb(0, 255, 0),
+    rgb(255, 255, 0),
+    rgb(255, 181, 44),
+    red
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -67,13 +67,14 @@
 .waviy h3 {
   position: relative;
   animation: waviy 1s infinite;
-  
 }
 @keyframes waviy {
-  0%,40%,100% {
-    transform: translateY(0)
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
   }
   20% {
-    transform: translateY(-20px)
+    transform: translateY(-20px);
   }
 }

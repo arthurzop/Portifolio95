@@ -27,7 +27,7 @@ export default function AboutMe({ logic, handle }) {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              minWidth: "180px",
+              minWidth: "740px",
             }}
           >
             sobre_mim.exe
@@ -36,25 +36,30 @@ export default function AboutMe({ logic, handle }) {
         </div>
         <R.WindowContent>
           <R.Tabs value={activeTab} onChange={handleChange}>
-            <S.Tab value={0}>Visao geral</S.Tab>
-            <S.Tab value={1}>Minhas habilidades</S.Tab>
-            <S.Tab value={2}>Em progresso</S.Tab>
+            <S.Tab value={0} style={{ marginInline: "1px" }}>
+              Visao geral
+            </S.Tab>
+            <S.Tab value={1} style={{ marginInline: "1px" }}>
+              Minhas habilidades
+            </S.Tab>
+            <S.Tab value={2} style={{ marginInline: "1px" }}>
+              Em progresso
+            </S.Tab>
           </R.Tabs>
           <R.TabBody>
             {activeTab === 0 && (
-              <S.GroupBox label="Sobre mim :P">
+              <S.GroupBox label="Sobre mim :P" style={{ width: "100%" }}>
                 <img src={Eu} className="about-image" />
                 <div className="about-text">
                   <h1>Artur Medeiros</h1>
                   <p>São Paulo, Brasil</p>
                   <R.Divider />
                   <h2>
-                    Tenho 21 anos, estudante de design gráfico
-                    na cruzeiro do sul. <br />
-                    Focado em web design & front-end
+                    Tenho 21 anos, estudante de design gráfico na cruzeiro do
+                    sul e focado em web design, brand design & front-end.
                   </h2>
                   <div class="waviy">
-                    <h3>Welcome to my portfolio</h3>
+                    <h3>Welcome to my portfolio!</h3>
                   </div>
                 </div>
               </S.GroupBox>
@@ -89,7 +94,7 @@ export default function AboutMe({ logic, handle }) {
               </R.GroupBox>
             )}
             {activeTab === 2 && (
-              <S.GroupBox label="Progredindo...">
+              <S.GroupBox label="Progredindo..." style={{ width: "100%" }}>
                 <div className="currently-text">
                   <h2>Estudando:</h2>
                   <ul>
@@ -98,23 +103,17 @@ export default function AboutMe({ logic, handle }) {
                     <li>Branding</li>
                     <li>Illustrator</li>
                   </ul>
-                  <h2>
-                    & <br />
-                    Masterizando:
-                  </h2>
+                  <h2>& Masterizando:</h2>
                   <ul>
                     <li>Figma</li>
                     <li>Web Design</li>
                     <li>UI / UX</li>
                   </ul>
                   <R.Divider />
-                  <h2>
-                    Projetos como Web Designer <br />& Front-End:
-                  </h2>
+                  <h2>Projetos em progesso:</h2>
                   <ul>
                     <li>Suporte de Domingo</li>
-                    <li>Data Mastery</li>
-                    <li>Zone</li>
+                    <li>Code Trouble</li>
                   </ul>
                 </div>
               </S.GroupBox>
