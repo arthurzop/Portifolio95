@@ -17,7 +17,6 @@ body{
 .apps-container{
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   width: fit-content;
   max-height: 95vh;
   gap: 3vh;
