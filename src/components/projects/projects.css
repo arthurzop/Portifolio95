@@ -19,13 +19,13 @@
 }
 
 .text-container h2 {
-  font-size: 1.1em;
+  font-size: 1.2em;
   text-align: center;
 }
 
 .project-image {
-  width: 250px;
-  height: 125px;
+  max-width: 250px;
+  max-height: 250px;
 }
 
 .comic {
@@ -34,4 +34,9 @@
   align-self: center;
   margin: 3vh 0;
   user-select: none;
+}
+
+.link{
+  height: 13px;
+  padding-right: 4px;
 }

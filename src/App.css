@@ -1,20 +1,22 @@
+img {
+  user-select: none;
+}
 
-body{
-  background-image: url('./assets/background.jpg');
+body {
+  background-image: url("./assets/background.jpg");
   background-position: center;
   height: 100vh;
   max-height: 100vh;
   overflow: hidden;
-  
 }
 
-.toolbar-container{
+.toolbar-container {
   position: absolute;
   bottom: 0;
   width: 100%;
 }
 
-.apps-container{
+.apps-container {
   display: flex;
   flex-direction: column;
   width: fit-content;
@@ -23,26 +25,26 @@ body{
   padding: 3vh;
 }
 
-.subcontainer{
+.subcontainer {
   display: flex;
   align-items: center;
-  gap: .5vw;
+  gap: 0.5vw;
 }
 
-.open-apps-container{
+.open-apps-container {
   position: absolute;
   z-index: 10;
   top: 0;
   margin: 10vh;
 }
 
-.column{
+.column {
   width: 30px;
   background-color: #919191;
   user-select: none;
 }
 
-.column h1{
+.column h1 {
   transform: rotate(-90deg);
   font-weight: bold;
   color: #cccccc;
@@ -51,7 +53,7 @@ body{
   left: -15%;
 }
 
-.column h1 span{
-  color: #FFF;
+.column h1 span {
+  color: #fff;
   padding: 5px;
 }
