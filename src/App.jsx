@@ -16,6 +16,7 @@ import Folder from "./assets/Projects.ico";
 import Telephone from "./assets/Contact.ico";
 import Palette from "./assets/Theme.ico";
 import Form from "./assets/Form.ico";
+import dog from "./assets/dog.png";
 
 // Importando as fontes do React 95
 import ms_sans_serif from "react95/dist/fonts/ms_sans_serif.woff2";
@@ -267,6 +268,12 @@ export default function App() {
                 </div>
               </Draggable>
             )}
+          </div>
+          <div className="monitor-container">
+            <R.Monitor>
+              {/* <img src={dog} alt="dog" className="dog"/> */}
+              <div className="bg"></div>
+            </R.Monitor>
           </div>
           <div className="toolbar-container">
             <R.AppBar position="relative">
