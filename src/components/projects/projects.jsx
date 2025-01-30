@@ -8,7 +8,7 @@ import project2 from "../../assets/project2.png";
 import project3 from "../../assets/project3.png";
 import project5 from "../../assets/project5.png";
 import comic from "../../assets/comic.gif";
-import link from "../../assets/link.svg";
+import link from "../../assets/Link.svg";
 
 export default function Projects({ logic, handle }) {
   const [state, setState] = useState({
